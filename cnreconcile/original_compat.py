@@ -7,7 +7,6 @@ import datetime as dt,hashlib,re
 from decimal import Decimal
 from pathlib import Path
 from urllib.parse import urlparse,urlsplit
-import pdfplumber
 
 def day(value):
  if not isinstance(value,str) or not re.fullmatch(r'\d{4}-\d{2}-\d{2}',value):raise ValueError('日期须为YYYY-MM-DD')
@@ -53,6 +52,10 @@ def verify(request):
     if not blob.startswith(b'%PDF') or digest!=request['sha256']:raise ValueError('PDF内容或哈希不符')
     fields=request['fields']
     if not isinstance(fields,list) or not fields:raise ValueError('缺少待核验字段')
+    try:
+        import pdfplumber
+    except ImportError as exc:
+        raise ValueError('PDF原文核验需要可选依赖，请安装 cn-financial-reconcile[pdf]') from exc
     with pdfplumber.open(request['documentPath']) as doc:
         front=''.join(compact(p.extract_text()) for p in doc.pages[:8])
         for name in ['title','issuer','publicationExcerpt']:
