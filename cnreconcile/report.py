@@ -9,3 +9,16 @@ def markdown(r):
         text+='原文状态：'+states[row['pageEvidenceStatus']]+'。\n'
         text+='来源：'+row['reportedSource']+'；原文：'+row['originalSource']+'。\n\n'
     return text+'## 使用限制\n\n'+'\n'.join('- '+x for x in r['limitations'])+'\n'
+
+
+def html_report(r, spec=None):
+    from html import escape
+    import json,hashlib
+    from pathlib import Path
+    from .html_controls import table
+    body=table(['字段','期间','计算状态','结论'],[[x['metric'],x['period'],{'not-comparable':'口径不可比','matched-within-rounding':'声明精度内吻合','value-conflict':'数值差异'}[x['status']],x['conclusion']] for x in r['results']])
+    files=['engine.py','report.py','html_controls.py','__main__.py']
+    hashes={f:hashlib.sha256((Path(__file__).parent/f).read_bytes()).hexdigest() for f in files}
+    frozen='<details><summary>保存的输入与方法摘要（分享前检查隐私）</summary><pre>'+escape(json.dumps({'input':spec,'methodSha256':hashes},ensure_ascii=False,indent=2,allow_nan=False))+'</pre></details>'
+    meta='截止日 '+str(r['asOf'])+'；方法 '+r['toolVersion']+' / '+r['inputSchema']+' / '+r['rulesVersion']
+    return '<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>研究结果</title><style>body{max-width:1000px;margin:32px auto;padding:0 20px;font:17px/1.7 system-ui,sans-serif;color:#203047}pre{white-space:pre-wrap;overflow-wrap:anywhere}table{border-collapse:collapse;width:100%}td,th{border-bottom:1px solid #ddd;padding:10px;text-align:left}input,select{font:inherit;max-width:100%}</style><body><p>'+escape(meta)+'</p><pre>'+escape(markdown(r))+'</pre>'+body+frozen+'</body></html>'
