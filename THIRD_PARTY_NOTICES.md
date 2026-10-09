@@ -13,3 +13,8 @@ Python标准库随使用者Python发行版；可选[pdfplumber](https://github.c
 examples/demo.json是虚构教学输入；readme-preview.html由其实际计算生成，不是真实基金或公司数据，只追加教学/日期标识，未取得截图或浏览器视觉验收。页面未捆绑字体，只使用系统后备字体。validation仅保留有限事实、来源URL和摘要，不附公告全文、PDF、机构图表、行情缓存或账户输入。
 
 原文的访问或公开披露不等于已获再分发权；管理人、巨潮等原件和数据的商业再分发授权未确认，用户须按实际用途核对。MIT仅覆盖有权授权的项目内容，不授予外部行情、研报、公告、品牌或运行依赖的权利。
+
+
+## 同作者旧接口迁入
+
+cnreconcile/original_compat.py 的schema-1字段核验及日期/URL辅助从research-workbench提交1594937的scripts/verify_original.py、collection_validation.py、research_library.py迁入，保留MIT及原版权；本次只剥离schema-2分支（留主包暂未迁移），并拒绝未知显式schema。不是重新认证原文/完整三表。源码与许可证：[原始提交](https://github.com/KILING-TASI/research-workbench/tree/1594937)。主包不再维护这一份schema-1核验核心，旧名称仅转发；独立工具不需要安装工作台。
