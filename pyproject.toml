@@ -3,11 +3,11 @@ requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 [project]
 name = "cn-financial-reconcile"
-version = "0.1.0"
+version = "0.2.0.dev1"
 description = "中国财报字段核对：显式来源、未知与计算边界"
 requires-python = ">=3.10"
 license = {text = "MIT"}
 [project.optional-dependencies]
-pdf = ["pypdf>=4,<7"]
+pdf = ["pypdf>=4,<7", "pdfplumber>=0.11,<0.12"]
 [tool.setuptools.packages.find]
 include = ["cnreconcile*"]

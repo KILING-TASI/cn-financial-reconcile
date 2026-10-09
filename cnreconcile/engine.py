@@ -66,5 +66,5 @@ def reconcile(spec):
             reportedBaseUnits=str(lv),extractedBaseUnits=str(rv),difference=None if differences else str(gap),roundingTolerance=str(tolerance),
             pageEvidenceStatus=page_status,reportedSource=left['source'],originalSource=right['source'],
             conclusion=('数值吻合，但不等于原文已核验' if status=='matched-within-rounding' else '口径不同，不能直接裁决数值' if differences else '数值存在差异，需要回查原文和提取过程')))
-    return dict(asOf=cutoff,results=results,limitations=['按声明的主体、期间、合并范围、币种和口径核对；不验证声明本身',
+    return dict(toolVersion='cn-financial-reconcile-0.2.0.dev1',inputSchema='cnreconcile-pairs-v1',rulesVersion='amount-dimensions-1',asOf=cutoff,results=results,limitations=['按声明的主体、期间、合并范围、币种和口径核对；不验证声明本身',
         '原页引句找到不证明数值被正确提取；数值勾稽与原页证据分列','不出审计意见，不将差异直接判为造假','不自动读取全部三表或判断会计法规适用性'])
