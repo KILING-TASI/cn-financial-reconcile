@@ -49,3 +49,6 @@ statementVersion仅为选定版本声明，相同文字不证明原文同版；v
 入口：python -m cnreconcile.version_review validation/guozhong-version-public-input.json --out-dir local-data/new-version-review。schema version-selected-fields-v1 / 方法 bound-selected-occurrences-1；记录双版各页/短引句/字段及公告关系，给本地PDF时核对每份SHA。公开输入不含本地路径，复跑保持声明未核页；本次本地核验结果单列。[原文选定对照](validation/guozhong-version-report.html)、[核验结果](validation/guozhong-version-verified-result.json)。
 
 仅核两个出现位置，不是全部三表验收或当前最新版认证；后续2026年8月非经常性损益更正等完整性尚未核，不能称5月修订版为最新。此配对是当前取得的公开原文，不是当时已冻结的历史样本。更正关联证据加入文档ID与SHA绑定（no-automatic-supersession-2），不自动决定版本优先级。
+
+
+迁移入口：cnreconcile.original_compat.verify拥有主包旧schema1原页字段核验核心；单独安装本库即可调用，主包只保留旧调用名转发。此为原算法搬迁，不是新增全量三表认证；schema2仍暂未迁移。旧真实分红/双版样本与冻结结果不变。

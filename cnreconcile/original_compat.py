@@ -88,3 +88,24 @@ def verify(request):
             if len(candidates)!=1 or len(matches)!=1:raise ValueError('字段原文行列匹配缺失或不唯一:'+key)
             verified.append({**field,'originalRow':matches[0],'verification':'exact-table-cell'})
     return {'type':'original-document-verification','status':'passed','sourceUrl':request['sourceUrl'],'sha256':digest,'title':request['title'],'issuer':request['issuer'],'reportDate':request['reportDate'],'publishedAt':request['publishedAt'],'fields':verified,'limitations':['只核验列出的字段与当前文件，不证明其他字段或财务真实性','官方域名清单由调用者核对，未自动发现公告','送出日期不等于已取得当时网络发布快照；当前原文不是历史冻结预测输入']}
+
+
+if __name__=='__main__':
+    import argparse,json
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('input',type=Path);parser.add_argument('--out',required=True,type=Path);args=parser.parse_args()
+    try:
+        if args.out.exists():raise FileExistsError('输出已存在，不覆盖旧核验')
+        def unique(pairs):
+            result={}
+            for key,value in pairs:
+                if key in result:raise ValueError('重复JSON字段')
+                result[key]=value
+            return result
+        def constant(value):raise ValueError('非有限JSON数值')
+        request=json.loads(args.input.read_text('utf-8-sig'),object_pairs_hook=unique,parse_constant=constant)
+        if isinstance(request.get('documentPath'),str):
+            path=Path(request['documentPath']);request['documentPath']=str(path if path.is_absolute() else args.input.resolve().parent/path)
+        result=verify(request);args.out.parent.mkdir(parents=True,exist_ok=True)
+        with args.out.open('x',encoding='utf-8') as stream:json.dump(result,stream,ensure_ascii=False,indent=2,allow_nan=False)
+    except (ValueError,KeyError,TypeError,OSError) as error:parser.exit(2,'未完成schema1原页核验：'+str(error)+'\n')
