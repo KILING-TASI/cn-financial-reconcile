@@ -1,0 +1,41 @@
+{
+  "type": "dividend-sustainability-observation",
+  "asOf": "2026-06-01",
+  "currency": "CNY",
+  "amounts": {
+    "operatingCashFlow": "1200000",
+    "capitalExpenditure": "400000",
+    "profit": "1000000",
+    "oneOffProfit": "200000",
+    "declaredDividend": "500000",
+    "paidDividend": "300000"
+  },
+  "verification": {
+    "operatingCashFlow": "teaching-not-original-verified",
+    "capitalExpenditure": "teaching-not-original-verified",
+    "profit": "teaching-not-original-verified",
+    "oneOffProfit": "teaching-not-original-verified",
+    "declaredDividend": "teaching-not-original-verified",
+    "paidDividend": "teaching-not-original-verified"
+  },
+  "cashSurplus": "800000",
+  "profitLessDeclaredOneOff": "800000",
+  "coverage": {
+    "declaredDividend": {
+      "status": "observed-coverage",
+      "cashSurplusCoverage": "1.6",
+      "profitCoverage": "2"
+    },
+    "paidDividend": {
+      "status": "observed-coverage",
+      "cashSurplusCoverage": "2.666666666666666666666666667",
+      "profitCoverage": null
+    }
+  },
+  "conclusion": "本组教学金额中，扣除资本开支后的经营现金结余足以覆盖当年宣告分红。 这是当期观察，不承诺未来分红；宣告与实际支付分开看。",
+  "limitations": [
+    "金额和已核状态来自输入声明，未独立认证原文；资本开支定义须在来源中说明",
+    "经营现金流减资本开支是本次观察代理，不等同可分配利润或严格FCFF",
+    "一次性收益仅作单列调整；不验证会计分类，不预测未来分红，不统一打分"
+  ]
+}

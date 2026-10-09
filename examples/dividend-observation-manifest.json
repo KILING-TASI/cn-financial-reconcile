@@ -1,0 +1,10 @@
+{
+  "exampleType": "teaching-only",
+  "generatedBy": "cnreconcile.dividend_observation",
+  "visualStatus": "not-browser-verified",
+  "sha256": {
+    "dividend-observation-result.json": "ab19dbf1f9f4b6360f007b47fb48e90abd64c67852fcc54e76cb45f8b466f909",
+    "dividend-observation-report.md": "e0ef6e8f9d6d0b3a45b1d1ab9e63275198f4b2f76c5abc93ef454adefa55fbdf",
+    "dividend-observation-report.html": "4bb38184c3e4627eb8a076d8ce7b5549bfe80039a6386904aaf3712162360def"
+  }
+}
