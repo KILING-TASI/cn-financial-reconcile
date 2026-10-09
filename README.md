@@ -80,7 +80,7 @@ python -m pip install "pypdf>=4,<7"
 
 ## 许可范围
 
-[MIT原创许可](LICENSE) · [第三方、示例与数据范围](THIRD_PARTY_NOTICES.md)。代码许可不包含原文、数据或品牌的再分发授权。
+[MIT原创许可](LICENSE)（KILING-TASI及原有贡献者版权） · [第三方、示例与数据范围](THIRD_PARTY_NOTICES.md)。第三方保留原许可；代码许可不包含原文、数据或品牌的再分发授权。
 
 ## 结果表筛选与排序（待审）
 
@@ -94,3 +94,6 @@ python -m pip install "pypdf>=4,<7"
 
 
 新增开发入口：[分红可持续性观察](DIVIDEND_OBSERVATION.md)，仅教学样本验收，不预测未来分红。
+
+
+当前待审增量的实现、真实样本、版本与未完成项见[详细交付状态](DIVIDEND_OBSERVATION.md)；CI不代表原件认证或投资有效，不自动更新已安装版。
