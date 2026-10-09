@@ -1,0 +1,10 @@
+{
+  "methodVersion": "dividend-observation-2",
+  "sampleType": "teaching-only",
+  "visualStatus": "not-browser-verified",
+  "sha256": {
+    "dividend-observation-v2-result.json": "0f72c29388f9ce7f3c9c1c505d4363c3d9b07e625b199c79f2efb8f194a415a2",
+    "dividend-observation-v2-report.md": "0b0c155e3ff63c17c8948a3cbba40c7668290dbbe5ea2e6cfe17f21b6cef8a6a",
+    "dividend-observation-v2-report.html": "30500839acaacf80a8be8dfb5d84dfb9a50e6bf9346fdc5e575cf25f9691260e"
+  }
+}

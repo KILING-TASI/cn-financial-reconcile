@@ -20,3 +20,14 @@ python -m cnreconcile.dividend_observation examples/dividend-teaching.json --out
 
 
 [本批教学报告](examples/dividend-observation-report.html)（下载后查看，未完成浏览器视觉验收）；[计算结果](examples/dividend-observation-result.json)。
+
+
+## 语义返修：方法 dividend-observation-2
+
+新版入口使用 examples/dividend-teaching-v2.json；旧输入与旧结果冻结保留，不代表新版已核验利润归属。每个事实的 metric 必须与外层六字段严格相同，营收不能冒充经营现金流。未知显式 inputSchema / methodVersion（包括 null）拒绝；未声明版本的旧输入按本轮明确方法输出并记实际版本，不重写历史。
+
+输入schema为 cnreconcile-dividend-v1，方法为 dividend-observation-2。利润及一次性项须明确 profitAttribution=parent-owners 或 all-owners，taxBasis=after-tax；宣告分红利润覆盖还须 recipientAttribution 匹配。缺口或不一致时相关利润数留空，现金观察与利润观察分开。before-tax不能与税后利润直接相减。合并范围相同不能证明归属相同。
+
+statementVersion仅为选定版本声明，相同文字不证明原文同版；versionSelectionStatus始终为声明未核验。不自动选更正优先级。更正前后真实原文配对仍未完成。历史结果不可作为本轮新版方法验收。
+
+新版教学产物见 [v2结果](examples/dividend-observation-v2-result.json) 与 [v2报告](examples/dividend-observation-v2-report.html)。旧样本没有归属与税后声明，在新版方法中利润调整/覆盖未知。
