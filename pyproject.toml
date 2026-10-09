@@ -11,3 +11,6 @@ license = {text = "MIT"}
 pdf = ["pypdf>=4,<7", "pdfplumber>=0.11,<0.12"]
 [tool.setuptools.packages.find]
 include = ["cnreconcile*"]
+
+[tool.setuptools]
+license-files = ["LICENSE", "THIRD_PARTY_NOTICES.md"]
