@@ -43,7 +43,7 @@ class TestDividend(unittest.TestCase):
     with self.subTest(key=key,value=value),self.assertRaises(ValueError):calculate(s)
  def test_old_unspecified_profit_basis_is_unknown(self):
   s=json.loads((Path(__file__).parents[1]/'examples/dividend-teaching.json').read_text('utf-8'))
-  r=calculate(s);self.assertIsNone(r['profitLessDeclaredOneOff']);self.assertIsNone(r['coverage']['declaredDividend']['profitCoverage']);self.assertEqual(r['methodVersion'],'dividend-observation-2')
+  r=calculate(s);self.assertIsNone(r['profitLessDeclaredOneOff']);self.assertIsNone(r['coverage']['declaredDividend']['profitCoverage']);self.assertEqual(r['methodVersion'],'dividend-observation-3')
  def test_profit_oneoff_ownership_and_tax(self):
   for key,value in [('profitAttribution','all-owners'),('taxBasis','before-tax'),('profitAttribution',None)]:
    s=copy.deepcopy(self.s);s['facts']['oneOffProfit'][key]=value
@@ -52,3 +52,13 @@ class TestDividend(unittest.TestCase):
   self.assertIsNone(calculate(self.s)['coverage']['declaredDividend']['profitCoverage'])
  def test_version_selection_stays_unverified(self):
   self.assertEqual(calculate(self.s)['versionSelectionStatus'],'declared-not-original-verified')
+ def test_public_source_token_and_unit_conflict(self):
+  s=json.loads((Path(__file__).parents[1]/'examples/midea-dividend-source-input.json').read_text('utf-8'))
+  s['facts']['operatingCashFlow']['value']=1
+  with self.assertRaises(ValueError):calculate(s)
+  s=json.loads((Path(__file__).parents[1]/'examples/midea-dividend-source-input.json').read_text('utf-8'))
+  s['facts']['capitalExpenditure']['unit']='亿元'
+  with self.assertRaises(ValueError):calculate(s)
+ def test_no_local_original_does_not_claim_verified(self):
+  s=json.loads((Path(__file__).parents[1]/'examples/midea-dividend-source-input.json').read_text('utf-8'))
+  self.assertTrue(all(v=='declared-not-page-verified' for v in calculate(s)['verification'].values()))

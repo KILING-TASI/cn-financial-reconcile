@@ -31,3 +31,12 @@ python -m cnreconcile.dividend_observation examples/dividend-teaching.json --out
 statementVersion仅为选定版本声明，相同文字不证明原文同版；versionSelectionStatus始终为声明未核验。不自动选更正优先级。更正前后真实原文配对仍未完成。历史结果不可作为本轮新版方法验收。
 
 新版教学产物见 [v2结果](examples/dividend-observation-v2-result.json) 与 [v2报告](examples/dividend-observation-v2-report.html)。旧样本没有归属与税后声明，在新版方法中利润调整/覆盖未知。
+
+
+## 官方原文限定样本（方法 dividend-observation-3）
+
+新增 public-document-sample，仅接受HTTPS来源、原文SHA、物理页、短引句、sourceValue/明确转换及unitQuote。提供本地原文时核主体/年度、文件SHA、金额token和单位引句；无本地PDF时仅声明未核页，不升级证据。教学方法2仍可显式调用，方法1/未知版本拒绝；缺省方法输出实际版本3。金额绑定不等于全量报表或会计分类认证。
+
+[美的2025年限定样本](examples/midea-dividend-report.html)：深交所官方276页年报，选取物理页11/79/135/137/223的六项。经营现金流533.46亿元，购建项111.42亿元，结余代理422.04亿元，年度预案323.61亿元，观察覆盖1.30倍。归母税后利润和非经常性损益扣税/少数权益后归属声明一致，调整利润412.67亿元。实际支付304.77亿元含跨年度分红，不把利息或回购凑进股息。所有六项在本地绑定页找到短引句/单位/金额；公开输入无私人路径，重新跑公开输入仍为声明未核页。
+
+仅选定这份原文，不认证最新更正版本、母公司可分配现金或未来派息。合并现金结余不等于母公司现金，购建项不含收购。真实更正前后配对仍按取得情况单独列状态，不能用一份更正公告当两版报表。
