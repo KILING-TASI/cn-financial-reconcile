@@ -28,3 +28,7 @@
 `validate_versions(documents, relations, as_of)`只登记有页码引句依据的correction/restatement及影响fields，拒绝错主体、错误时间顺序和循环；不自动替换事实。版本关系本轮仅教学输入验证，尚无真实重述样本，不标原文闭环。
 
 本次开发结果分别记录toolVersion、inputSchema和rulesVersion。未发布开发接口不与既有v0.1.0发布包混称；主工作台转换需明确适配版本。
+
+## 更正资料新增（2026-10-09）
+
+[有限更正资料](validation/correction-context.json)已在选定官方原页核对单位与比例更正，但尚未取得原/修订两版对应表。比例不属于本金额核对器输入；单位变化不自动触发旧金额除以一万。此次仅新增证据资料，不能标为validate_versions真实版本链闭环。财务审计与内控审计、审计师变更分别判断。截图因浏览器file协议策略拒绝仍未取得。
