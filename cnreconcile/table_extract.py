@@ -61,12 +61,22 @@ def validate_versions(documents,relations,as_of):
         if not isinstance(fields,list) or not fields or len(set(fields))!=len(fields) or any(not isinstance(x,str) or not x.strip() for x in fields):raise ValueError('需明确受影响字段，不能覆盖整份报告')
         evidence=relation.get('evidence')
         if not isinstance(evidence,dict):raise ValueError('更正/重述关系需公告依据')
+        binding='not-bound-to-document-id'
+        if 'documentId' in evidence:
+            if evidence['documentId'] not in docs:raise ValueError('关系证据文档标识不存在')
+            bound=docs[evidence['documentId']]
+            if bound['entity']!=docs[before]['entity']:raise ValueError('更正证据主体不一致')
+            if evidence.get('pdfPath'):
+                evidence_path=Path(evidence['pdfPath'])
+                if not evidence_path.is_file() or evidence_path.stat().st_size>64*1024*1024 or hashlib.sha256(evidence_path.read_bytes()).hexdigest()!=bound['sha256']:raise ValueError('更正证据原文SHA与文档标识不同')
+                binding='local-document-sha-bound'
+            else:binding='declared-document-id-not-file-verified'
         status=verify_pdf_quote(evidence)
-        edges.append(dict(relation,evidenceStatus=status,priorityDecision='not-automatically-selected'))
+        edges.append(dict(relation,evidenceStatus=status,documentBindingStatus=binding,priorityDecision='not-automatically-selected'))
     graph={}
     for edge in edges:graph.setdefault(edge['from'],[]).append(edge['to'])
     def walk(key,path):
         if key in path:raise ValueError('版本关系存在循环，不能解释为修订链')
         for next_key in graph.get(key,[]):walk(next_key,path+[key])
     for key in docs:walk(key,[])
-    return {'toolVersion':'cnreconcile-table-0.1.dev1','inputSchema':'explicit-version-relations-v1','rulesVersion':'no-automatic-supersession-1','documents':documents,'relations':edges,'scope':'explicit version relations; no automatic supersession or audit opinion'}
+    return {'toolVersion':'cnreconcile-table-0.2.dev1','inputSchema':'explicit-version-relations-v1','rulesVersion':'no-automatic-supersession-2','documents':documents,'relations':edges,'scope':'explicit version relations; no automatic supersession or audit opinion'}
