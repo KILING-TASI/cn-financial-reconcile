@@ -1,0 +1,40 @@
+{
+  "status": "selected-question-completed",
+  "question": "美的集团2025年合并经营现金流减选定资本开支，能否覆盖该年宣告分红？",
+  "sourceUrl": "https://disc.static.szse.cn/download/disc/disk03/finalpage/2026-03-31/70e81c5f-97d4-4c87-8e4b-fcc5a3bcd361.PDF",
+  "documentSha256": "16f95f70527db59dcf2736f276a9479cf7ee917e5f71e4f6cbbe83acbad9f4b6",
+  "asOf": "2026-10-09",
+  "methodVersion": "dividend-observation-3",
+  "verification": {
+    "operatingCashFlow": "quote-found-on-page",
+    "capitalExpenditure": "quote-found-on-page",
+    "profit": "quote-found-on-page",
+    "oneOffProfit": "quote-found-on-page",
+    "declaredDividend": "quote-found-on-page",
+    "paidDividend": "quote-found-on-page"
+  },
+  "referenceCashSurplus": "42204041000",
+  "referenceDeclaredCoverage": "1.304178585348699171882460862",
+  "latestVersionVerified": false,
+  "limitations": [
+    "完整流程仅覆盖这一个年度现金覆盖问题，不是完整公司估值或投资决策",
+    "原PDF仅本地留存，不随公开包再分发",
+    "合并现金不等于母公司可分配现金，覆盖不证明实际或未来可支付"
+  ],
+  "methodSha256": {
+    "cnreconcile/dividend_observation.py": "529572091863d9f4a28589058c0ca4167220740ec6d44f82bf9a07631b3cdde7",
+    "cnreconcile/engine.py": "8438ec90beeafa417bc931810a41d52b548f58da635a21ec68f5c8c03868bea4",
+    "tools/reproduce_midea_case.py": "94fdc2b7d8e1192be4b3c9849552eb4d6ffed1f88663292d895e8965a87c3271"
+  },
+  "filesSha256": {
+    "desktop.jpg": "9d63ce6b4268c14a154041c300d92fd9495e721aba9d5112ecafe91cc1928b95",
+    "input.json": "3eb8857425e5dace10eb8a9206f1f354b6d0b368fb6e929e87b9fda9d5db3d67",
+    "mobile.jpg": "9f9858794fcb11640b8c846593192a31c831f9fdb48079afac5816a3c7848883",
+    "README.md": "45d13fb736c7a7b8c73fa9a1d511cd826b1a1d04c4b3be3f0151d1bfa2e48884",
+    "report.html": "9bb0f1a15b117f366305c39239b9ff6f9b157700f66901f1e93b5f5fb2d2b57e",
+    "report.md": "6c3a39b6639285367d6850de90bac4e2c15f8044dab4b10369edcf4323110753",
+    "result.json": "437a7a850c676a947ec670554cf08b290f34090446d3511ee0a3c9265f467042"
+  },
+  "pdfDistributed": false,
+  "visualStatus": "desktop-default-and-390x844-checked"
+}

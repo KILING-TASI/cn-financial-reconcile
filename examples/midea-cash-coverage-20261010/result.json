@@ -1,0 +1,50 @@
+{
+  "type": "dividend-sustainability-observation",
+  "inputSchema": "cnreconcile-dividend-v1",
+  "methodVersion": "dividend-observation-3",
+  "sampleType": "public-document-sample",
+  "versionSelectionStatus": "declared-not-original-verified",
+  "profitAdjustmentStatus": "declared-comparable-profit",
+  "asOf": "2026-10-09",
+  "currency": "CNY",
+  "amounts": {
+    "operatingCashFlow": "53345930000",
+    "capitalExpenditure": "11141889000",
+    "profit": "43945411000",
+    "oneOffProfit": "2678178000",
+    "declaredDividend": "32360630265",
+    "paidDividend": "30476852000"
+  },
+  "verification": {
+    "operatingCashFlow": "quote-found-on-page",
+    "capitalExpenditure": "quote-found-on-page",
+    "profit": "quote-found-on-page",
+    "oneOffProfit": "quote-found-on-page",
+    "declaredDividend": "quote-found-on-page",
+    "paidDividend": "quote-found-on-page"
+  },
+  "cashSurplus": "42204041000",
+  "profitLessDeclaredOneOff": "41267233000",
+  "coverage": {
+    "declaredDividend": {
+      "status": "observed-coverage",
+      "cashSurplusCoverage": "1.304178585348699171882460862",
+      "profitCoverage": "1.357989960026509390978328030",
+      "profitCoverageStatus": "declared-comparable-profit"
+    },
+    "paidDividend": {
+      "status": "observed-coverage",
+      "cashSurplusCoverage": "1.384790036713765581825839493",
+      "profitCoverage": null,
+      "profitCoverageStatus": "not-applicable-to-paid-dividend"
+    }
+  },
+  "conclusion": "按本次选定原文金额，扣除资本开支后的经营现金结余足以覆盖当年宣告分红。 这是当期观察，不承诺未来分红；宣告与实际支付分开看。",
+  "limitations": [
+    "金额口径来自输入；原页短引句与金额token绑定单列，不等于全量原文或会计分类已认证；资本开支定义须在来源中说明",
+    "经营现金流减资本开支是本次观察代理，不等同可分配利润或严格FCFF",
+    "一次性收益仅在税后和利润归属口径已声明一致时调整；不验证会计分类，不预测未来分红，不统一打分",
+    "相同版本文字不证明原文同版；不自动选择更正版本，未核原文时保持声明未验证",
+    "合并经营现金结余不是母公司可分配现金；覆盖倍数不证明能支付分红"
+  ]
+}

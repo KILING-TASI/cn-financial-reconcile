@@ -7,3 +7,9 @@ global-exclude *.pdf *.PDF *.pyc
 prune build
 prune dist
 prune local-data
+
+recursive-include tools *.py
+
+recursive-include validation *.jpg
+
+recursive-include examples *.jpg

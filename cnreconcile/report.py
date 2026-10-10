@@ -19,8 +19,12 @@ def html_report(r, spec=None):
     from pathlib import Path
     from .html_controls import table
     body=table(['字段','期间','计算状态','结论'],[[x['metric'],x['period'],{'not-comparable':'口径不可比','matched-within-rounding':'声明精度内吻合','value-conflict':'数值差异'}[x['status']],x['conclusion']] for x in r['results']])
+    body=body.replace('<table id="result-table">','<table id="result-table" style="min-width:600px">')
     files=['engine.py','difference_guidance.py','report.py','html_controls.py','__main__.py']
     hashes={f:hashlib.sha256((Path(__file__).parent/f).read_bytes()).hexdigest() for f in files}
     frozen='<details><summary>保存的输入与方法摘要（分享前检查隐私）</summary><pre>'+escape(json.dumps({'input':spec,'methodSha256':hashes},ensure_ascii=False,indent=2,allow_nan=False))+'</pre></details>'
+    teaching=all('教学' in row[key] for row in r['results'] for key in ('reportedSource','originalSource'))
+    summary='<section aria-label="本次结论"><h1>财报字段核对</h1><p>数值差异 '+str(sum(x['status']=='value-conflict' for x in r['results']))+' 项；口径不可比 '+str(sum(x['status']=='not-comparable' for x in r['results']))+' 项。</p><h2>影响结论的关键缺口</h2><p>金额吻合不等于原页已核实；原页短引句核对不等于数字提取或会计口径正确。差异排查提示是核查方向，不是原因结论。</p></section>'
+    summary=summary.replace('<h1>','<p>'+('原创教学样本，非真实研究结论。' if teaching else '按输入声明观察；来源与完整性仍须核对。')+'</p><h1>',1)
     meta='截止日 '+str(r['asOf'])+'；方法 '+r['toolVersion']+' / '+r['inputSchema']+' / '+r['rulesVersion']
-    return '<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>研究结果</title><style>body{max-width:1000px;margin:32px auto;padding:0 20px;font:17px/1.7 system-ui,sans-serif;color:#203047}pre{white-space:pre-wrap;overflow-wrap:anywhere}table{border-collapse:collapse;width:100%}td,th{border-bottom:1px solid #ddd;padding:10px;text-align:left}input,select{font:inherit;max-width:100%}</style><body><p>'+escape(meta)+'</p><pre>'+escape(markdown(r))+'</pre>'+body+frozen+'</body></html>'
+    return '<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>研究结果</title><style>body{max-width:1000px;margin:32px auto;padding:0 20px;font:17px/1.7 system-ui,sans-serif;color:#203047}pre{white-space:pre-wrap;overflow-wrap:anywhere}table{border-collapse:collapse;width:100%}td,th{border-bottom:1px solid #ddd;padding:10px;text-align:left;overflow-wrap:anywhere}input,select{font:inherit;max-width:100%}</style><body><p>'+escape(meta)+'</p>'+summary+body+'<details><summary>完整说明、未知路径与核查提示</summary><pre>'+escape(markdown(r))+'</pre></details>'+frozen+'</body></html>'
