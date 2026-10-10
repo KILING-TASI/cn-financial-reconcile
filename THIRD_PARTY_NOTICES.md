@@ -18,3 +18,5 @@ examples/demo.json是虚构教学输入；readme-preview.html由其实际计算�
 ## 同作者旧接口迁入
 
 cnreconcile/original_compat.py 的schema-1字段核验及日期/URL辅助从research-workbench提交1594937的scripts/verify_original.py、collection_validation.py、research_library.py迁入，保留MIT及原版权；本次只剥离schema-2分支（留主包暂未迁移），并拒绝未知显式schema。不是重新认证原文/完整三表。源码与许可证：[原始提交](https://github.com/KILING-TASI/research-workbench/tree/1594937)。主包不再维护这一份schema-1核验核心，旧名称仅转发；独立工具不需要安装工作台。
+
+本轮新增研究复查、报告说明及合成教学为作者原创MIT；同作者随包通用I/O代码独立保留，不要求其他仓库安装。规则有限事实和来源链接不改变原文权利；未捆绑实际公告/研报PDF或私人账户资料。
