@@ -28,13 +28,14 @@
   },
   "filesSha256": {
     "desktop.jpg": "9d63ce6b4268c14a154041c300d92fd9495e721aba9d5112ecafe91cc1928b95",
-    "input.json": "3eb8857425e5dace10eb8a9206f1f354b6d0b368fb6e929e87b9fda9d5db3d67",
+    "input.json": "726f25987ee6d58c58b97b348da426c428cf0bc0193e059a3d8b1431441ac8e9",
     "mobile.jpg": "9f9858794fcb11640b8c846593192a31c831f9fdb48079afac5816a3c7848883",
-    "README.md": "45d13fb736c7a7b8c73fa9a1d511cd826b1a1d04c4b3be3f0151d1bfa2e48884",
-    "report.html": "9bb0f1a15b117f366305c39239b9ff6f9b157700f66901f1e93b5f5fb2d2b57e",
-    "report.md": "6c3a39b6639285367d6850de90bac4e2c15f8044dab4b10369edcf4323110753",
-    "result.json": "437a7a850c676a947ec670554cf08b290f34090446d3511ee0a3c9265f467042"
+    "README.md": "7c9ca4ce7b33c7ecd7bc0f524d5e06c13ef7dd382f7d57bebd6e61f14f823151",
+    "report.html": "1e9365bf394b3d824d3e8ec42deec1872423050d7a4153642a80ea084076cc0b",
+    "report.md": "91dfee032f6f4db3e2910c07106c2132e9f6a386f853829e5fc10e4b95625cc5",
+    "result.json": "b2037750f0f9d7c27e8c04f3e98879e56f5e96cae6b9e44e124f7bcd460ceded"
   },
   "pdfDistributed": false,
-  "visualStatus": "desktop-default-and-390x844-checked"
+  "visualStatus": "desktop-default-and-390x844-checked",
+  "publicTextEncoding": "UTF-8 with LF line endings; projection excludes local PDF paths"
 }
