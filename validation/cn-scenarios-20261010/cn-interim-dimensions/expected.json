@@ -1,0 +1,17 @@
+{
+  "expected": {
+    "results.0.status": "matched-within-rounding",
+    "results.0.difference": "0",
+    "results.1.conflictingDimensions": [
+      "scope"
+    ],
+    "results.2.conflictingDimensions": [
+      "basis"
+    ],
+    "results.3.conflictingDimensions": [
+      "metric"
+    ]
+  },
+  "reason": "同为1亿元：同口径匹配；母公司不同于合并、单季不同于累计、全部净利润不同于归母。CAS32第4/5条，CAS33第35条。无原页保持证据缺失。",
+  "error": null
+}

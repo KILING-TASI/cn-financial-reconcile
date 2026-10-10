@@ -1,0 +1,8 @@
+{
+  "expected": {
+    "profitLessDeclaredOneOff": "8800000",
+    "profitAdjustmentStatus": "declared-comparable-profit"
+  },
+  "reason": "教学税前非经常200万元、税影响50万元、少数股东影响30万元：已独立整理归母税后120万元；1000−120=880万元。工具不计算税率，不认证非经常分类。CSRC2023-65第八项。",
+  "error": null
+}

@@ -1,0 +1,5 @@
+{
+  "expected": {},
+  "reason": "未实现approvedDividend独立阶段接口，不允许静默新增事实槽位；拒绝且目标目录不存在。",
+  "error": "事实字段未知"
+}

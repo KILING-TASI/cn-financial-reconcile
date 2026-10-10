@@ -1,0 +1,8 @@
+{
+  "expected": {
+    "profitLessDeclaredOneOff": null,
+    "profitAdjustmentStatus": "ownership-or-tax-basis-unknown-or-inconsistent"
+  },
+  "reason": "仅有税前200万元，不能直接从归母税后1000万元减除；税与少数权益不能缺省为零。",
+  "error": null
+}

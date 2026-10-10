@@ -1,0 +1,8 @@
+{
+  "expected": {
+    "coverage.paidDividend.status": "missing",
+    "amounts.paidDividend": null
+  },
+  "reason": "批准方案与支付事实分别保留：批准不能自动补出现金支付，本工具不认证会议决议。",
+  "error": null
+}

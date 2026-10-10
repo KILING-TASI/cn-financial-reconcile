@@ -39,10 +39,10 @@ def lookup(value,path):
     for part in path.split("."):value=value[int(part)] if isinstance(value,list) else value[part]
     return value
 
-def run(out):
+def run(out, cases=None):
     out.mkdir(parents=True,exist_ok=False)
     rows=[]
-    for case in scenarios():
+    for case in scenarios() if cases is None else cases:
         folder=out/case["name"];folder.mkdir()
         source=folder/"input.json";source.write_text(json.dumps(case["input"],ensure_ascii=False,indent=2),encoding="utf-8")
         (folder/"expected.json").write_text(json.dumps({k:case[k] for k in ("expected","reason","error")},ensure_ascii=False,indent=2),encoding="utf-8")
