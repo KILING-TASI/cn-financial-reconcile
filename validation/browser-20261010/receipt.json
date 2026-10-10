@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-10",
+  "browser": "Codex in-app browser on Windows",
+  "pages": [
+    "financial teaching report"
+  ],
+  "desktop": "default viewport",
+  "mobile": {
+    "width": 390,
+    "height": 844
+  },
+  "checks": [
+    "summary and critical limitations visible",
+    "filter changes displayed rows while totals remain",
+    "details expand to full explanation",
+    "UTF-8 Chinese text readable"
+  ],
+  "htmlSha256": "400b068c46c07f572b700b3feb28fba025d84c5b86b6fb070afe8a9d5d1243c6",
+  "screenshots": {
+    "desktop.jpg": "238a6a35bf0f94e59d05d3de01610b527c85635d250346dd9cf1bd6d12c61f22",
+    "mobile.jpg": "cc4df24760302729483a4570a1527dcf9ef3a0be001e572ee968b28ae32bf271"
+  },
+  "limitations": [
+    "只验本轮保存的页面，不代表全部历史报告、全部浏览器或所有输入",
+    "财报宽表使用局部水平滚动，不保证所有列同时在窄屏显示"
+  ]
+}

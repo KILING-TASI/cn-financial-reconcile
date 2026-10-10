@@ -6,9 +6,9 @@
 
 ## 安装和首次试用
 
-本轮对应[发布页](https://github.com/KILING-TASI/cn-financial-reconcile/releases/tag/v0.2.2)；下载时以实际上传的完整源码、wheel、sdist 与校验清单为准。源码按下面步骤安装；下载 wheel 后，将安装命令末尾的 `.` 换成该 wheel 文件路径。pip 安装不会自动注册 AI 工具中的 Skill。
+本轮对应[发布页](https://github.com/KILING-TASI/cn-financial-reconcile/releases/tag/v0.2.3)；下载时以实际上传的完整源码、wheel、sdist 与校验清单为准。源码按下面步骤安装；下载 wheel 后，将安装命令末尾的 `.` 换成该 wheel 文件路径。pip 安装不会自动注册 AI 工具中的 Skill。
 
-本轮源码版本为 `0.2.2`。统一安装入口需要 Python 3.10 或以上。在完整源码目录新建自己的 Python 环境，下面的 Windows 命令不需要激活脚本：
+本轮源码版本为 `0.2.3`。统一安装入口需要 Python 3.10 或以上。在完整源码目录新建自己的 Python 环境，下面的 Windows 命令不需要激活脚本：
 
 ```powershell
 python -m venv .venv
@@ -97,3 +97,9 @@ python -m pip install ".[pdf]"
 ## 导入前先预检
 
 `python -m cnreconcile input.json --validate-only`（或`--dry-run`）只检查本地声明字段，不联网、不读PDF、不写报告，也不执行专业计算。问题按fieldPath列出；通过不证明来源或完整性。`python -m cnreconcile.preflight --contract`查看契约索引。完整入口与边界见[输入契约说明](examples/INPUT_CONTRACTS.md)。
+
+## 一个真实原文问题的完整案例
+
+[美的2025年报现金覆盖案例](examples/midea-cash-coverage-20261010/README.md)保存问题、官方来源、六项原页核对、结果与复现办法。仅回答选定年度现金覆盖问题，不冒充完整公司估值或未来支付承诺。原PDF只本地留存，不再分发。
+
+本轮基金/财报新报告采用结论、关键缺口、完整证据三层阅读；保存页面已做[桌面与窄屏浏览器验收](validation/browser-20261010/README.md)。旧快照按原记录保留，不因此自动标为已验。

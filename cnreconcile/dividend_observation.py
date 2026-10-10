@@ -186,6 +186,7 @@ def publish(spec, out):
     out = Path(out)
     if out.exists():
         raise FileExistsError('请另存新目录')
+    entity=next((f['entity'] for f in spec['facts'].values() if f is not None),'未声明公司')
     banner = '**教学金额，不是实际公司判断。**' if result['sampleType'] == 'teaching-only' else '**限定公开原文样本；不代表全量资料或未来分红判断。**'
     text = '# 分红可持续性观察\n\n' + banner + '\n\n' + result['conclusion']
     def money(value):
@@ -220,7 +221,7 @@ def publish(spec, out):
     out.mkdir(parents=True)
     for name, content in [('input.json', json.dumps(spec, ensure_ascii=False, indent=2)),
                           ('result.json', json.dumps(result, ensure_ascii=False, indent=2)), ('报告.md', text),
-                          ('报告.html', '<!doctype html><meta charset="utf-8"><title>分红观察</title><main style="max-width:900px;margin:40px auto;font:18px/1.8 sans-serif;white-space:pre-wrap">' + html.escape(text) + '</main>')]:
+                          ('报告.html', '<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>分红观察</title><style>body{max-width:950px;margin:32px auto;padding:0 20px;font:17px/1.7 system-ui;color:#203047}pre{white-space:pre-wrap;overflow-wrap:anywhere}section{padding:16px;border:1px solid #d6e0ea;border-radius:10px}summary{cursor:pointer}</style><body><section><p>'+html.escape(banner.strip('*'))+'</p><h1>'+html.escape(entity)+' · 分红现金覆盖观察</h1><p>截止日 '+html.escape(result['asOf'])+'</p><p>'+html.escape(result['conclusion'])+'</p><p>经营现金流减选定资本开支：'+html.escape('未知' if result['cashSurplus'] is None else format(decimal(result['cashSurplus'])/decimal(100000000),',.5f')+'亿元（CNY）')+'</p><h2>影响结论的关键缺口</h2><p>合并经营现金结余不等于母公司可分配现金；宣告与实际支付分开，覆盖倍数不证明未来能够支付。选定版本不等于最新版本已认证。</p></section><details><summary>原页证据、计算口径与完整说明</summary><pre>'+html.escape(text)+'</pre></details></body></html>')]:
         (out / name).write_text(content, encoding='utf-8')
     return result
 
