@@ -4,3 +4,7 @@ examples/midea-cash-coverage-20261010/*.json text eol=lf
 examples/midea-cash-coverage-20261010/*.md text eol=lf
 examples/midea-cash-coverage-20261010/*.html text eol=lf
 examples/midea-cash-coverage-20261010/*.jpg -text
+
+Start-Demo.sh text eol=lf
+
+Start-Demo.cmd text eol=crlf
