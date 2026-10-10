@@ -1,0 +1,8 @@
+{
+  "name": "rounding-outside",
+  "passed": true,
+  "exitCode": 0,
+  "stderr": "",
+  "methodVersion": "amount-dimensions-2",
+  "inputSha256": "ccce11e1e20352f253193cb758d2cd79961fb68290e7f402633944f697e03602"
+}

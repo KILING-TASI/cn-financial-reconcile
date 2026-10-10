@@ -1,6 +1,7 @@
 """Bounded dividend coverage observation, not a payout forecast."""
 import argparse
 import json
+import sys
 from pathlib import Path
 from .engine import validate_fact, verify_pdf_quote, decimal
 
@@ -225,6 +226,9 @@ def publish(spec, out):
 
 
 if __name__ == '__main__':
+    for stream in (sys.stdout, sys.stderr):
+        if hasattr(stream, 'reconfigure'):
+            stream.reconfigure(encoding='utf-8')
     parser = argparse.ArgumentParser()
     parser.add_argument('input', type=Path)
     parser.add_argument('--out-dir', required=True)
@@ -238,5 +242,8 @@ if __name__ == '__main__':
         return result
     def reject_constant(value):
         raise ValueError('JSON不支持非有限数字：' + value)
-    publish(json.loads(args.input.read_text('utf-8-sig'), object_pairs_hook=unique_fields,
-                       parse_constant=reject_constant), args.out_dir)
+    try:
+        publish(json.loads(args.input.read_text('utf-8-sig'), object_pairs_hook=unique_fields,
+                           parse_constant=reject_constant), args.out_dir)
+    except (ValueError, KeyError, TypeError, OSError, ArithmeticError) as error:
+        parser.exit(2, '未能完成：' + str(error) + '；未覆盖旧输出。\n')

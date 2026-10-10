@@ -1,0 +1,8 @@
+{
+  "expected": {
+    "results.0.status": "matched-within-rounding",
+    "results.0.pageEvidenceStatus": "evidence-missing"
+  },
+  "reason": "移除原页声明，数值仍匹配但证据必须缺失。",
+  "error": null
+}

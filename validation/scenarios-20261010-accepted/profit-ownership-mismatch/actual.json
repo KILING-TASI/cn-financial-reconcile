@@ -1,0 +1,8 @@
+{
+  "name": "profit-ownership-mismatch",
+  "passed": true,
+  "exitCode": 0,
+  "stderr": "",
+  "methodVersion": "dividend-observation-2",
+  "inputSha256": "675fa879a8dde875f76ebe19a9c2af30f3bb0c4a0c4dab15df04b22cef005f41"
+}

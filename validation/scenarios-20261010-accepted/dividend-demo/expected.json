@@ -1,0 +1,12 @@
+{
+  "expected": {
+    "cashSurplus": "800000",
+    "profitLessDeclaredOneOff": "800000",
+    "coverage.declaredDividend.cashSurplusCoverage": "1.6",
+    "coverage.declaredDividend.profitCoverage": "2",
+    "coverage.paidDividend.profitCoverage": null,
+    "coverage.paidDividend.profitCoverageStatus": "not-applicable-to-paid-dividend"
+  },
+  "reason": "120−40=80万元；80/50=1.6；100/50=2。2025支付30万元归属2024，不能与2025宣告50合计或套2025利润。",
+  "error": null
+}

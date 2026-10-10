@@ -1,0 +1,8 @@
+{
+  "expected": {
+    "cashSurplus": null,
+    "coverage.declaredDividend.cashSurplusCoverage": null
+  },
+  "reason": "缺资本开支，不能把全部经营现金流当现金结余。",
+  "error": null
+}

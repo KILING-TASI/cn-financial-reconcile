@@ -1,0 +1,8 @@
+{
+  "name": "future-disclosure",
+  "passed": true,
+  "exitCode": 2,
+  "stderr": "未能完成：事实披露晚于截止日或早于报告期；未覆盖旧输出。\n",
+  "methodVersion": "rejected-before-result",
+  "inputSha256": "a23e7abc986d8ae1b75f9397386e0dc62409c70221e836f6b3e0bc89d2166aaf"
+}
