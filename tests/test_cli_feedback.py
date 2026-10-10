@@ -24,7 +24,7 @@ class TestFeedback(unittest.TestCase):
             self.assertEqual(first.returncode,0)
             self.assertEqual(first.stdout,"")
             self.assertIn("教学",first.stderr)
-            self.assertIn(str(target),first.stderr)
+            self.assertIn(str(target.resolve()),first.stderr)
             old=hashlib.sha256(target.read_bytes()).hexdigest()
             second=self.cli(*args)
             self.assertEqual(second.returncode,2)
