@@ -43,6 +43,9 @@ CONTRACT={'contract':'cnreconcile-pairs-v1','required':['asOf','pairs'],'pairReq
 
 
 def main():
+    import sys
+    for stream in (sys.stdout,sys.stderr):
+        if hasattr(stream,"reconfigure"):stream.reconfigure(encoding="utf-8")
     import argparse,json
     p=argparse.ArgumentParser(description='本地输入契约索引；不联网、不写文件')
     p.add_argument('--contract',action='store_true',required=True)
