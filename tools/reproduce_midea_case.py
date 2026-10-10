@@ -31,7 +31,7 @@ def reproduce(pdf,out,download=False):
         assert result['cashSurplus']==receipt['referenceCashSurplus']
         assert result['coverage']['declaredDividend']['cashSurplusCoverage']==receipt['referenceDeclaredCoverage']
         assert all(v=='quote-found-on-page' for v in result['verification'].values())
-        receipt['methodSha256']={name:hashlib.sha256((source.parents[1]/name).read_bytes()).hexdigest() for name in ['cnreconcile/dividend_observation.py','cnreconcile/engine.py','tools/reproduce_midea_case.py']}
+        receipt['methodSha256']={name:hashlib.sha256(path.read_bytes()).hexdigest() for name,path in {'cnreconcile/dividend_observation.py':Path(sys.modules[publish.__module__].__file__), 'cnreconcile/engine.py':Path(sys.modules['cnreconcile.engine'].__file__), 'tools/reproduce_midea_case.py':Path(__file__)}.items()}
         receipt['filesSha256']={p.relative_to(out).as_posix():hashlib.sha256(p.read_bytes()).hexdigest() for p in out.rglob('*') if p.is_file() and p!=private}
         (out/'receipt.json').write_text(json.dumps(receipt,ensure_ascii=False,indent=2),encoding='utf-8')
         return receipt
