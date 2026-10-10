@@ -6,7 +6,7 @@
 
 ## 最短试用
 
-需要Python 3.10+。先取得本仓`main`分支源码并进入仓库目录；获取源码需要联网，下面的教学示例只用标准库，不联网，也不需要安装PDF组件。
+需要Python 3.10+。下载[完整源码ZIP](https://github.com/KILING-TASI/cn-financial-reconcile/releases/download/v0.2.0/cn-financial-reconcile-0.2.0-source.zip)，解压后进入目录；也可使用本仓`main`源码。获取源码需要联网，下面的教学示例只用标准库，不联网，也不需要安装PDF组件。
 
 在Windows PowerShell中运行：
 
@@ -65,7 +65,7 @@ python -m pip install ".[pdf]"
 
 ## 源码与下载版本
 
-当前`main`已包含金额核对、选定原文与版本对照、分红观察及情景测试，此前集成源码版本为`0.2.0.dev1`。本PR准备`v0.2.0`候选包，尚未发布；现有Release仍为下述旧版。发布后下载与安装步骤见[发布说明](RELEASE_NOTES.md)。
+当前`main`已包含金额核对、选定原文与版本对照、分红观察及情景测试，源码与最新发行包版本为`0.2.0`，[v0.2.0已于2026-10-10发布](https://github.com/KILING-TASI/cn-financial-reconcile/releases/tag/v0.2.0)。下载[完整源码ZIP](https://github.com/KILING-TASI/cn-financial-reconcile/releases/download/v0.2.0/cn-financial-reconcile-0.2.0-source.zip)、[wheel](https://github.com/KILING-TASI/cn-financial-reconcile/releases/download/v0.2.0/cn_financial_reconcile-0.2.0-py3-none-any.whl)或[sdist](https://github.com/KILING-TASI/cn-financial-reconcile/releases/download/v0.2.0/cn_financial_reconcile-0.2.0.tar.gz)，并用[SHA256SUMS.txt](https://github.com/KILING-TASI/cn-financial-reconcile/releases/download/v0.2.0/SHA256SUMS.txt)核对摘要。安装步骤见[发布说明](RELEASE_NOTES.md)。
 
 [旧版Release v0.1.0](https://github.com/KILING-TASI/cn-financial-reconcile/releases/tag/v0.1.0)是此前的研究预览版，不包含本次新增接口；本轮没有重新验证旧包，也不会自动更新用户安装。
 
