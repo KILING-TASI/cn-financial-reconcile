@@ -2,6 +2,16 @@
 
 把渠道数据和原文提取的金额放在一起，先核对报表口径，再看数字是否一致，并列出尚未核实的原页证据。
 
+## 你可以用它解决什么
+
+**两处财报金额对不上，是口径不同，还是数字有差异？**
+
+先核对期间、单位与报表口径，再列出金额差异和原页核验状态。
+
+先看[保存的结果示例](examples/readme-preview.html)，不需要安装 Python：图片可直接查看；HTML 请下载完整源码后用浏览器打开。示例按原记录标注教学或限定真实样本，不能换个名称就当作你的研究结果。重新计算才需要 Python。
+
+其他问题可看[九个工具如何选择](https://github.com/KILING-TASI/research-workbench/blob/main/references/tool-navigation.md)。各工具可独立使用，不必安装全部仓库。
+
 [![原创代码 MIT](https://img.shields.io/badge/原创代码-MIT-blue)](LICENSE)
 
 ## 先看一份教学报告
@@ -12,9 +22,9 @@
 
 ## 安装和首次试用
 
-本轮对应[发布页](https://github.com/KILING-TASI/cn-financial-reconcile/releases/tag/v0.2.6)；下载时以实际上传的完整源码、wheel、sdist 与校验清单为准。源码按下面步骤安装；下载 wheel 后，将安装命令末尾的 `.` 换成该 wheel 文件路径。pip 安装不会自动注册 AI 工具中的 Skill。
+安装包见[发布页](https://github.com/KILING-TASI/cn-financial-reconcile/releases/tag/v0.2.6)；下载时以实际上传的完整源码、wheel、sdist 与校验清单为准。源码按下面步骤安装；下载 wheel 后，将安装命令末尾的 `.` 换成该 wheel 文件路径。pip 安装不会自动注册 AI 工具中的 Skill。
 
-本轮源码版本为 `0.2.6`。统一安装入口需要 Python 3.10 或以上。在完整源码目录新建自己的 Python 环境，下面的 Windows 命令不需要激活脚本：
+安装包版本为 `0.2.6`。统一安装入口需要 Python 3.10 或以上。在完整源码目录新建自己的 Python 环境，下面的 Windows 命令不需要激活脚本：
 
 ```powershell
 python -m venv .venv
@@ -23,7 +33,7 @@ python -m venv .venv
 .\.venv\Scripts\cn-financial-reconcile.exe demo --out-dir reports/demo --auto-name
 ```
 
-工具名与仓库名相同；在已激活的环境中可以直接输入工具名。Linux/macOS 使用 `.venv/bin/python` 和 `.venv/bin/cn-financial-reconcile`。教学结果写入当前工作目录；`--auto-name` 自动另选新名字，旧结果保留。不加该参数时，教学入口拒绝已有目录。`cn-financial-reconcile run --help` 查看原生参数，原来的命令继续兼容。pip 安装提供 CLI；作为 Skill 使用仍须保留完整源码及许可资源，不能只复制 SKILL.md。安装可能需要联网获取普通构建依赖；教学离线。下面保留原生入口及此前发行记录，本轮安装和版本以本节为准。
+工具名与仓库名相同；在已激活的环境中可以直接输入工具名。Linux/macOS 使用 `.venv/bin/python` 和 `.venv/bin/cn-financial-reconcile`。教学结果写入当前工作目录；`--auto-name` 自动另选新名字，旧结果保留。不加该参数时，教学入口拒绝已有目录。`cn-financial-reconcile run --help` 查看原生参数，原来的命令继续兼容。pip 安装提供 CLI；作为 Skill 使用仍须保留完整源码及许可资源，不能只复制 SKILL.md。安装可能需要联网获取普通构建依赖；教学离线。下面保留原生入口及此前发行记录，安装步骤和对应版本以本节为准。
 
 导入自己的资料前，可先运行 `python -m cnreconcile input.json --validate-only`；[输入契约索引](examples/INPUT_CONTRACTS.md)列出字段、入口与预检限制。
 
@@ -66,7 +76,7 @@ python -m cnreconcile examples/demo.json --format html --out local-data/first-re
 
 ## 独立使用与项目关系
 
-本仓既提供[Skill调用说明](SKILL.md)，也提供可单独运行的Python引擎：Skill的`name`和发行包名都是`cn-financial-reconcile`，命令行模块名为`cnreconcile`。使用Skill需保留本仓代码、示例及说明资源，不能只复制SKILL.md；Skill安装和自然语言发现不在本轮验证范围内。
+本仓既提供[Skill调用说明](SKILL.md)，也提供可单独运行的Python引擎：Skill的`name`和发行包名都是`cn-financial-reconcile`，命令行模块名为`cnreconcile`。使用Skill需保留本仓代码、示例及说明资源，不能只复制SKILL.md；Skill安装和自然语言发现不在验证范围内。
 
 [研究工作台](https://github.com/KILING-TASI/research-workbench)可以按约定调用本工具，但本工具不依赖工作台、其他自家仓库或作者缓存。公司研究的判断仍由研究工作台组织，金额核对不自动给出投资结论。
 
@@ -90,7 +100,7 @@ python -m pip install ".[pdf]"
 
 当前`main`已包含金额核对、选定原文与版本对照、分红观察及情景测试，此前v0.2.0发行记录保留如下，当前版本以上方安装节为准；[v0.2.0已于2026-10-10发布](https://github.com/KILING-TASI/cn-financial-reconcile/releases/tag/v0.2.0)。下载[完整源码ZIP](https://github.com/KILING-TASI/cn-financial-reconcile/releases/download/v0.2.0/cn-financial-reconcile-0.2.0-source.zip)、[wheel](https://github.com/KILING-TASI/cn-financial-reconcile/releases/download/v0.2.0/cn_financial_reconcile-0.2.0-py3-none-any.whl)或[sdist](https://github.com/KILING-TASI/cn-financial-reconcile/releases/download/v0.2.0/cn_financial_reconcile-0.2.0.tar.gz)，并用[SHA256SUMS.txt](https://github.com/KILING-TASI/cn-financial-reconcile/releases/download/v0.2.0/SHA256SUMS.txt)核对摘要。安装步骤见[发布说明](RELEASE_NOTES.md)。
 
-[旧版Release v0.1.0](https://github.com/KILING-TASI/cn-financial-reconcile/releases/tag/v0.1.0)是此前的研究预览版，不包含本次新增接口；本轮没有重新验证旧包，也不会自动更新用户安装。
+[旧版Release v0.1.0](https://github.com/KILING-TASI/cn-financial-reconcile/releases/tag/v0.1.0)是此前的研究预览版，不包含本次新增接口；没有重新验证旧包，也不会自动更新用户安装。
 
 ## 验证、许可与来源
 
@@ -108,12 +118,12 @@ python -m pip install ".[pdf]"
 
 [美的2025年报现金覆盖案例](examples/midea-cash-coverage-20261010/README.md)保存问题、官方来源、六项原页核对、结果与复现办法。仅回答选定年度现金覆盖问题，不冒充完整公司估值或未来支付承诺。原PDF只本地留存，不再分发。
 
-本轮基金/财报新报告采用结论、关键缺口、完整证据三层阅读；保存页面已做[桌面与窄屏浏览器验收](validation/browser-20261010/README.md)。旧快照按原记录保留，不因此自动标为已验。
+基金/财报新报告采用结论、关键缺口、完整证据三层阅读；保存页面已做[桌面与窄屏浏览器验收](validation/browser-20261010/README.md)。旧快照按原记录保留，不因此自动标为已验。
 
 0.2.4修正安装后的案例工具方法路径定位；原计算与0.2.3公开案例快照保留。工作台beta.10兼容矩阵记录的是固定0.2.3接口组合；本补丁不改变schema1接口，但不把新版本自动标成原组合已验。
 
 0.2.5固定公开案例在Git归档和检出中的LF换行，文件摘要与下载内容一致。0.2.3/0.2.4的内部案例清单可能受旧Windows归档换行转换影响；金额及原PDF核验未受影响，校验公开案例请使用0.2.5。旧标签和附件保留。
 
-## 本轮验证范围
+## 验证范围
 
 源码教学启动、软件环境查询和安装后教学入口分别验证；软件就绪不等于真实资料已取得。中文问答需要助手按本仓Skill准备已声明输入，没有宣称任意自然语言自动发现或全市场数据闭环。旧报告、历史tag与案例证据保留。
