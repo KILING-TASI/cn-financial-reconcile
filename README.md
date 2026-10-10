@@ -6,9 +6,9 @@
 
 ## 安装和首次试用
 
-本轮对应[发布页](https://github.com/KILING-TASI/cn-financial-reconcile/releases/tag/v0.2.1)；下载时以实际上传的完整源码、wheel、sdist 与校验清单为准。源码按下面步骤安装；下载 wheel 后，将安装命令末尾的 `.` 换成该 wheel 文件路径。pip 安装不会自动注册 AI 工具中的 Skill。
+本轮对应[发布页](https://github.com/KILING-TASI/cn-financial-reconcile/releases/tag/v0.2.2)；下载时以实际上传的完整源码、wheel、sdist 与校验清单为准。源码按下面步骤安装；下载 wheel 后，将安装命令末尾的 `.` 换成该 wheel 文件路径。pip 安装不会自动注册 AI 工具中的 Skill。
 
-本轮源码版本为 `0.2.1`。统一安装入口需要 Python 3.10 或以上。在完整源码目录新建自己的 Python 环境，下面的 Windows 命令不需要激活脚本：
+本轮源码版本为 `0.2.2`。统一安装入口需要 Python 3.10 或以上。在完整源码目录新建自己的 Python 环境，下面的 Windows 命令不需要激活脚本：
 
 ```powershell
 python -m venv .venv
@@ -18,6 +18,8 @@ python -m venv .venv
 ```
 
 工具名与仓库名相同；在已激活的环境中可以直接输入工具名。Linux/macOS 使用 `.venv/bin/python` 和 `.venv/bin/cn-financial-reconcile`。教学结果写入当前工作目录；`--auto-name` 自动另选新名字，旧结果保留。不加该参数时，教学入口拒绝已有目录。`cn-financial-reconcile run --help` 查看原生参数，原来的命令继续兼容。pip 安装提供 CLI；作为 Skill 使用仍须保留完整源码及许可资源，不能只复制 SKILL.md。安装可能需要联网获取普通构建依赖；教学离线。下面保留原生入口及此前发行记录，本轮安装和版本以本节为准。
+
+导入自己的资料前，可先运行 `python -m cnreconcile input.json --validate-only`；[输入契约索引](examples/INPUT_CONTRACTS.md)列出字段、入口与预检限制。
 
 ## 最短试用
 
@@ -80,7 +82,7 @@ python -m pip install ".[pdf]"
 
 ## 源码与下载版本
 
-当前`main`已包含金额核对、选定原文与版本对照、分红观察及情景测试，源码与最新发行包版本为`0.2.0`，[v0.2.0已于2026-10-10发布](https://github.com/KILING-TASI/cn-financial-reconcile/releases/tag/v0.2.0)。下载[完整源码ZIP](https://github.com/KILING-TASI/cn-financial-reconcile/releases/download/v0.2.0/cn-financial-reconcile-0.2.0-source.zip)、[wheel](https://github.com/KILING-TASI/cn-financial-reconcile/releases/download/v0.2.0/cn_financial_reconcile-0.2.0-py3-none-any.whl)或[sdist](https://github.com/KILING-TASI/cn-financial-reconcile/releases/download/v0.2.0/cn_financial_reconcile-0.2.0.tar.gz)，并用[SHA256SUMS.txt](https://github.com/KILING-TASI/cn-financial-reconcile/releases/download/v0.2.0/SHA256SUMS.txt)核对摘要。安装步骤见[发布说明](RELEASE_NOTES.md)。
+当前`main`已包含金额核对、选定原文与版本对照、分红观察及情景测试，此前v0.2.0发行记录保留如下，当前版本以上方安装节为准；[v0.2.0已于2026-10-10发布](https://github.com/KILING-TASI/cn-financial-reconcile/releases/tag/v0.2.0)。下载[完整源码ZIP](https://github.com/KILING-TASI/cn-financial-reconcile/releases/download/v0.2.0/cn-financial-reconcile-0.2.0-source.zip)、[wheel](https://github.com/KILING-TASI/cn-financial-reconcile/releases/download/v0.2.0/cn_financial_reconcile-0.2.0-py3-none-any.whl)或[sdist](https://github.com/KILING-TASI/cn-financial-reconcile/releases/download/v0.2.0/cn_financial_reconcile-0.2.0.tar.gz)，并用[SHA256SUMS.txt](https://github.com/KILING-TASI/cn-financial-reconcile/releases/download/v0.2.0/SHA256SUMS.txt)核对摘要。安装步骤见[发布说明](RELEASE_NOTES.md)。
 
 [旧版Release v0.1.0](https://github.com/KILING-TASI/cn-financial-reconcile/releases/tag/v0.1.0)是此前的研究预览版，不包含本次新增接口；本轮没有重新验证旧包，也不会自动更新用户安装。
 
@@ -91,3 +93,7 @@ python -m pip install ".[pdf]"
 [教学CLI情景](validation/SCENARIOS.md)保存输入、独立预期、实际结果及方法版本；[中国上市公司代表情景](validation/CN_SCENARIOS.md)补充官方规则来源与支持条件；[单仓隔离安装检查](.github/scripts/validate_isolated_install.py)验证不依赖其他仓库。真实原文仅限说明中选定的公司、字段与出现位置，不扩展为完整财报认证。
 
 原创代码和有权授权的说明采用[MIT](LICENSE)；外部组件、公告、数据和品牌保留各自权利，见[第三方与数据范围](THIRD_PARTY_NOTICES.md)。不打包第三方PDF、私人账户或作者缓存。更多使用边界见[免责声明](DISCLAIMER.md)。
+
+## 导入前先预检
+
+`python -m cnreconcile input.json --validate-only`（或`--dry-run`）只检查本地声明字段，不联网、不读PDF、不写报告，也不执行专业计算。问题按fieldPath列出；通过不证明来源或完整性。`python -m cnreconcile.preflight --contract`查看契约索引。完整入口与边界见[输入契约说明](examples/INPUT_CONTRACTS.md)。

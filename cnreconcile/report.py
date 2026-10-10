@@ -7,6 +7,7 @@ def markdown(r):
         else:text+=f"换算基础金额后，差额为{row['difference']}，声明精度允许的舍入差为{row['roundingTolerance']}。\n"
         states={'quote-found-on-page':'指定PDF物理页找到引句，但未证明数值提取正确','declared-not-page-verified':'引句和页码仅为声明，未核本地原页','pdf-component-missing':'缺PDF读取组件，未执行原页核对','quote-not-found':'指定物理页未找到引句','evidence-missing':'未提供页码引句'}
         if row.get('versionComparison')=='not-declared':text+='报表版本未声明，数值相同不表示已经确认同版。\n'
+        for hint in row.get('reviewHints',[]):text+='排查提示（非原因结论）：'+hint['message']+'\n'
         text+='原文状态：'+states[row['pageEvidenceStatus']]+'。\n'
         text+='来源：'+row['reportedSource']+'；原文：'+row['originalSource']+'。\n\n'
     return text+'## 使用限制\n\n'+'\n'.join('- '+x for x in r['limitations'])+'\n'
@@ -18,7 +19,7 @@ def html_report(r, spec=None):
     from pathlib import Path
     from .html_controls import table
     body=table(['字段','期间','计算状态','结论'],[[x['metric'],x['period'],{'not-comparable':'口径不可比','matched-within-rounding':'声明精度内吻合','value-conflict':'数值差异'}[x['status']],x['conclusion']] for x in r['results']])
-    files=['engine.py','report.py','html_controls.py','__main__.py']
+    files=['engine.py','difference_guidance.py','report.py','html_controls.py','__main__.py']
     hashes={f:hashlib.sha256((Path(__file__).parent/f).read_bytes()).hexdigest() for f in files}
     frozen='<details><summary>保存的输入与方法摘要（分享前检查隐私）</summary><pre>'+escape(json.dumps({'input':spec,'methodSha256':hashes},ensure_ascii=False,indent=2,allow_nan=False))+'</pre></details>'
     meta='截止日 '+str(r['asOf'])+'；方法 '+r['toolVersion']+' / '+r['inputSchema']+' / '+r['rulesVersion']
