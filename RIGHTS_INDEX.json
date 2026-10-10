@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "research-rights-index/1",
+  "repository": "cn-financial-reconcile",
+  "originalCodeLicense": "MIT",
+  "noticeFiles": [
+    {
+      "path": "LICENSE",
+      "sha256": "e2e3a3f682bbb78dcce5cc2d7c9f97afa545d6ba3a51a29d38e26e07f1730938"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "sha256": "2f02f43bb3f8eb227e2f0a5bda3e8b552291e701d0d2df1f89601b9b8e01bc1f"
+    }
+  ],
+  "dataRights": "Source-specific; not granted by code MIT",
+  "methodReferences": "See repository method documents; citations do not convey text or data redistribution rights",
+  "scope": "Notice-file inventory and hashes, not an authorization or legal compliance certificate",
+  "hashFormat": "utf-8-lf"
+}
