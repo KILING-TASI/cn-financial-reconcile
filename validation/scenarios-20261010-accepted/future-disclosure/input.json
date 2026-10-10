@@ -1,0 +1,65 @@
+{
+  "asOf": "2026-09-30",
+  "pairs": [
+    {
+      "reported": {
+        "entity": "教学公司",
+        "metric": "营业收入",
+        "period": "2026-06-30",
+        "publishedAt": "2027-01-01",
+        "scope": "合并",
+        "currency": "CNY",
+        "basis": "累计",
+        "source": "教学资料，不是真实披露",
+        "value": "1.00",
+        "unit": "亿元",
+        "roundingUnit": "0.01"
+      },
+      "extracted": {
+        "entity": "教学公司",
+        "metric": "营业收入",
+        "period": "2026-06-30",
+        "publishedAt": "2026-08-20",
+        "scope": "合并",
+        "currency": "CNY",
+        "basis": "累计",
+        "source": "教学资料，不是真实披露",
+        "value": "10000",
+        "unit": "万元",
+        "roundingUnit": "1"
+      },
+      "evidence": {
+        "page": 2,
+        "quote": "教学原文金额一亿元"
+      }
+    },
+    {
+      "reported": {
+        "entity": "教学公司",
+        "metric": "营业收入",
+        "period": "2026-06-30",
+        "publishedAt": "2026-08-20",
+        "scope": "合并",
+        "currency": "CNY",
+        "basis": "累计",
+        "source": "教学资料，不是真实披露",
+        "value": "1.00",
+        "unit": "亿元",
+        "roundingUnit": "0.01"
+      },
+      "extracted": {
+        "entity": "教学公司",
+        "metric": "营业收入",
+        "period": "2026-06-30",
+        "publishedAt": "2026-08-20",
+        "scope": "合并",
+        "currency": "CNY",
+        "basis": "累计",
+        "source": "教学资料，不是真实披露",
+        "value": "1.2",
+        "unit": "亿元",
+        "roundingUnit": "0.01"
+      }
+    }
+  ]
+}

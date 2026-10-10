@@ -1,0 +1,8 @@
+{
+  "name": "cn-paid-excluding-interest",
+  "passed": true,
+  "exitCode": 0,
+  "stderr": "",
+  "methodVersion": "dividend-observation-2",
+  "inputSha256": "31a6b5b09e0813a66f975a25681f29d8d0b8b34106d7e94c3c52ef1bb5ae95f4"
+}

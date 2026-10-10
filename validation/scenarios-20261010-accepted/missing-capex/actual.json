@@ -1,0 +1,8 @@
+{
+  "name": "missing-capex",
+  "passed": true,
+  "exitCode": 0,
+  "stderr": "",
+  "methodVersion": "dividend-observation-2",
+  "inputSha256": "e1f9bafdbd8cd9a1e877c3f7ad2c0438de5265c4be9b40cf592f8fbc5995e2a7"
+}

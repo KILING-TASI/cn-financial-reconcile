@@ -1,0 +1,13 @@
+{
+  "sampleType": "public-document-sample",
+  "methodVersion": "dividend-observation-3",
+  "methodSourceSha256": "4cf5b6247d46e27abd11c2b55fe55fc7d6954c79c078bf58405793ef4f92c728",
+  "originalStatus": "local SHA/page/unit/token checks; not full audit or latest-version selection",
+  "visualStatus": "not-browser-verified",
+  "sha256": {
+    "midea-dividend-source-input.json": "3eb8857425e5dace10eb8a9206f1f354b6d0b368fb6e929e87b9fda9d5db3d67",
+    "midea-dividend-verified-result.json": "437a7a850c676a947ec670554cf08b290f34090446d3511ee0a3c9265f467042",
+    "midea-dividend-report.md": "6c3a39b6639285367d6850de90bac4e2c15f8044dab4b10369edcf4323110753",
+    "midea-dividend-report.html": "b3e35695028c5dc32c335ebfc508828f7f8714958957e664e360fb2341f4b675"
+  }
+}

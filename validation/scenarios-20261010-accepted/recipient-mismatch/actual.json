@@ -1,0 +1,8 @@
+{
+  "name": "recipient-mismatch",
+  "passed": true,
+  "exitCode": 0,
+  "stderr": "",
+  "methodVersion": "dividend-observation-2",
+  "inputSha256": "f4b947c87901baac8d2cf97836868e5084de3c488f6bfb079b781406d7ae297f"
+}

@@ -1,0 +1,8 @@
+{
+  "name": "dividend-version-conflict",
+  "passed": true,
+  "exitCode": 2,
+  "stderr": "未能完成：经营指标期间或更正版本不同；未覆盖旧输出。\n",
+  "methodVersion": "rejected-before-result",
+  "inputSha256": "2fc2a585c65d543c8796d8b26553224855b24c3a68d6a852fd4912499c3040a1"
+}

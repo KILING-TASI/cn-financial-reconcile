@@ -1,0 +1,8 @@
+{
+  "expected": {
+    "profitLessDeclaredOneOff": null,
+    "coverage.declaredDividend.profitCoverage": "2"
+  },
+  "reason": "一次性项归属不一致禁止减除；独立的归母利润与宣告分红仍可观察。",
+  "error": null
+}

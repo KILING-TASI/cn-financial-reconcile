@@ -1,0 +1,8 @@
+{
+  "expected": {
+    "amounts.paidDividend": "300000",
+    "coverage.paidDividend.cashSurplusCoverage": "2.666666666666666666666666667"
+  },
+  "reason": "45−15=30万元纯股息；80/30=8/3。拆分由输入证据完成，工具不从45自动推断30；财政部2023-11-10解释混合行含股息/利润/利息。",
+  "error": null
+}

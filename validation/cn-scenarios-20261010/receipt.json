@@ -1,0 +1,91 @@
+{
+  "batch": "cn-three-scenario-families-20261010",
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "baseCommit": "7282408a1f1b4010f54c534f803027367f6b7028",
+  "cases": [
+    {
+      "name": "cn-interim-dimensions",
+      "passed": true,
+      "exitCode": 0,
+      "stderr": "",
+      "methodVersion": "amount-dimensions-2",
+      "inputSha256": "a953c0a73cfbc4763d8aa79c480dcddc2d76daddddd816414201457d2d5dbde4"
+    },
+    {
+      "name": "cn-oneoff-net-parent",
+      "passed": true,
+      "exitCode": 0,
+      "stderr": "",
+      "methodVersion": "dividend-observation-2",
+      "inputSha256": "d6b387c9a52e4f38a18e22149f26a59c33af1197a2c8d8446a7d45169e525183"
+    },
+    {
+      "name": "cn-oneoff-gross-unknown",
+      "passed": true,
+      "exitCode": 0,
+      "stderr": "",
+      "methodVersion": "dividend-observation-2",
+      "inputSha256": "34e3a6e103e82942b2a2f7ab80ae191827c09a3ba5b06aa9131433d328f79505"
+    },
+    {
+      "name": "cn-proposal-not-paid",
+      "passed": true,
+      "exitCode": 0,
+      "stderr": "",
+      "methodVersion": "dividend-observation-2",
+      "inputSha256": "4d500b43ac968ad32a8bad229599f5bbcd9d3ddede76f891e7ab0e39fbc5717b"
+    },
+    {
+      "name": "cn-approved-unpaid",
+      "passed": true,
+      "exitCode": 0,
+      "stderr": "",
+      "methodVersion": "dividend-observation-2",
+      "inputSha256": "75c27f06e71345f75a3f5959404d8bdfef5e3ce0daa08e4ddae5299f32033e5f"
+    },
+    {
+      "name": "cn-paid-excluding-interest",
+      "passed": true,
+      "exitCode": 0,
+      "stderr": "",
+      "methodVersion": "dividend-observation-2",
+      "inputSha256": "31a6b5b09e0813a66f975a25681f29d8d0b8b34106d7e94c3c52ef1bb5ae95f4"
+    },
+    {
+      "name": "cn-composite-payment-rejected",
+      "passed": true,
+      "exitCode": 2,
+      "stderr": "未能完成：指标语义冲突：paidDividend须声明metric=paidDividend；未覆盖旧输出。\n",
+      "methodVersion": "rejected-before-result",
+      "inputSha256": "103bf2fb9e97d939d631fac378496a7b851bf22b6204ad87c530ed5ddbd6efbe"
+    },
+    {
+      "name": "cn-stage-schema-rejected",
+      "passed": true,
+      "exitCode": 2,
+      "stderr": "未能完成：事实字段未知或结构无效；未覆盖旧输出。\n",
+      "methodVersion": "rejected-before-result",
+      "inputSha256": "1704f475b6260da8ce999f645734421c43780727aabefc9d16464e46b7369850"
+    }
+  ],
+  "limitations": [
+    "教学情景，不扩大真实公司样本；没有PDF认证",
+    "HTML仅实际生成，未做浏览器视觉验收",
+    "失败场景没有结果文件；本入口拒绝已有输出目录"
+  ],
+  "scenarioFamilies": 3,
+  "sourceIndex": "validation/cn-sources-20261010.json",
+  "verifiedAt": "2026-10-10",
+  "timezone": "Asia/Shanghai",
+  "sourceSha256": {
+    "validation\\run_scenarios.py": "2f804b6a34d6819d669bebd009d61cea58375a58fa2929b54d07f61d597c00e7",
+    "validation\\run_cn_scenarios.py": "c1b2b61ccbc2ddb1b132759c29763babcd1c21c7e7efa58a8fdd593d85dfd10d",
+    "validation\\cn-sources-20261010.json": "6fe44ff38ef453c3ebd4bcb150b8f0de7f1fc602a369559d67dca68695dc80f2",
+    "tests\\test_cli_scenarios.py": "389ac5035a166bf5435573179b22db763b5bf3a2b66f3b4b7d1317e162ada222",
+    "tests/test_cli_scenarios.py": "0df52b2be0f04ad46308ab3a25c35636b72588d090b64c8292ca65428a95a38a"
+  },
+  "regression": {
+    "tests": 43,
+    "status": "passed"
+  }
+}

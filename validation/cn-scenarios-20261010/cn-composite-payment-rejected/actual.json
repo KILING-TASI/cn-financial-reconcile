@@ -1,0 +1,8 @@
+{
+  "name": "cn-composite-payment-rejected",
+  "passed": true,
+  "exitCode": 2,
+  "stderr": "未能完成：指标语义冲突：paidDividend须声明metric=paidDividend；未覆盖旧输出。\n",
+  "methodVersion": "rejected-before-result",
+  "inputSha256": "103bf2fb9e97d939d631fac378496a7b851bf22b6204ad87c530ed5ddbd6efbe"
+}

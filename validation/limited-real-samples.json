@@ -1,0 +1,25 @@
+{
+  "status": "limited-local-validation",
+  "entity": "美的集团",
+  "reportPeriod": "2026-06-30",
+  "publishedAt": "2026-08-29",
+  "source": "https://static.cninfo.com.cn/finalpage/2026-08-29/1225531404.PDF",
+  "physicalPage": 7,
+  "fields": [
+    "营业收入",
+    "归母净利润",
+    "经营现金流净额"
+  ],
+  "unit": "千元",
+  "currentColumn": "本报告期",
+  "comparisonColumn": "上年同期",
+  "comparisonPeriod": "2025-06-30",
+  "scopeAndBasis": "input-declared consolidated YTD, not automatic authentication",
+  "pageReview": "selected page rendered and reviewed",
+  "actualRestatementSample": "not obtained",
+  "rawDocumentsBundled": false,
+  "sourceSha256": "576dd80e353e53296a800b03e9889a9cbb2e8b91fa2ab3c1dace7c10159179b8",
+  "toolVersion": "cnreconcile-table-0.1.dev1",
+  "inputSchema": "explicit-table-cell-v1",
+  "rulesVersion": "row-column-unit-1"
+}

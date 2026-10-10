@@ -1,0 +1,8 @@
+{
+  "expected": {
+    "results.0.status": "matched-within-rounding",
+    "results.0.roundingTolerance": "0.5"
+  },
+  "reason": "1000元四舍五入至元的半单位为0.5元；边界内含，超过0.0001元即冲突。",
+  "error": null
+}

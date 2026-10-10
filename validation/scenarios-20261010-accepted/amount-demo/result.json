@@ -1,0 +1,45 @@
+{
+  "toolVersion": "cn-financial-reconcile-0.2.0.dev1",
+  "inputSchema": "cnreconcile-pairs-v1",
+  "rulesVersion": "amount-dimensions-2",
+  "asOf": "2026-09-30",
+  "results": [
+    {
+      "metric": "营业收入",
+      "period": "2026-06-30",
+      "status": "matched-within-rounding",
+      "conflictingDimensions": [],
+      "versionComparison": "not-declared",
+      "reportedBaseUnits": "100000000.00",
+      "extractedBaseUnits": "100000000",
+      "difference": "0.00",
+      "roundingTolerance": "505000.00",
+      "pageEvidenceStatus": "declared-not-page-verified",
+      "reportedSource": "教学资料，不是真实披露",
+      "originalSource": "教学资料，不是真实披露",
+      "conclusion": "数值吻合，但不等于原文已核验"
+    },
+    {
+      "metric": "营业收入",
+      "period": "2026-06-30",
+      "status": "value-conflict",
+      "conflictingDimensions": [],
+      "versionComparison": "not-declared",
+      "reportedBaseUnits": "100000000.00",
+      "extractedBaseUnits": "120000000.0",
+      "difference": "-20000000.00",
+      "roundingTolerance": "1000000.00",
+      "pageEvidenceStatus": "evidence-missing",
+      "reportedSource": "教学资料，不是真实披露",
+      "originalSource": "教学资料，不是真实披露",
+      "conclusion": "数值存在差异，需要回查原文和提取过程"
+    }
+  ],
+  "limitations": [
+    "按声明的主体、期间、合并范围、币种和口径核对；不验证声明本身",
+    "原页引句找到不证明数值被正确提取；数值勾稽与原页证据分列",
+    "不出审计意见，不将差异直接判为造假",
+    "不自动读取全部三表或判断会计法规适用性",
+    "未声明财报版本不代表两份原文同版；重述差异不是自动更正判断"
+  ]
+}

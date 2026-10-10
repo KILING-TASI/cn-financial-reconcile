@@ -1,0 +1,11 @@
+{
+  "expected": {
+    "results.0.status": "not-comparable",
+    "results.0.difference": null,
+    "results.0.conflictingDimensions": [
+      "statementVersion"
+    ]
+  },
+  "reason": "相同金额的原版与重述版不能自动裁为同一事实。",
+  "error": null
+}

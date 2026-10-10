@@ -1,0 +1,8 @@
+{
+  "name": "cn-stage-schema-rejected",
+  "passed": true,
+  "exitCode": 2,
+  "stderr": "未能完成：事实字段未知或结构无效；未覆盖旧输出。\n",
+  "methodVersion": "rejected-before-result",
+  "inputSha256": "1704f475b6260da8ce999f645734421c43780727aabefc9d16464e46b7369850"
+}

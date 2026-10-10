@@ -1,0 +1,8 @@
+{
+  "name": "cn-approved-unpaid",
+  "passed": true,
+  "exitCode": 0,
+  "stderr": "",
+  "methodVersion": "dividend-observation-2",
+  "inputSha256": "75c27f06e71345f75a3f5959404d8bdfef5e3ce0daa08e4ddae5299f32033e5f"
+}

@@ -1,0 +1,8 @@
+{
+  "name": "same-money-different-version",
+  "passed": true,
+  "exitCode": 0,
+  "stderr": "",
+  "methodVersion": "amount-dimensions-2",
+  "inputSha256": "be3b1de445b9506d86cdc0786b616efee595bb3ff510f7b97871f43d617ac6bd"
+}

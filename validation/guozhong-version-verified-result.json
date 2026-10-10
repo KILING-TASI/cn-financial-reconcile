@@ -1,0 +1,103 @@
+{
+  "inputSchema": "version-selected-fields-v1",
+  "methodVersion": "bound-selected-occurrences-1",
+  "asOf": "2026-10-10",
+  "lineage": {
+    "toolVersion": "cnreconcile-table-0.2.dev1",
+    "inputSchema": "explicit-version-relations-v1",
+    "rulesVersion": "no-automatic-supersession-2",
+    "documents": [
+      {
+        "id": "original",
+        "entity": "黑龙江国中水务股份有限公司",
+        "version": "2025-annual-original-20260430",
+        "publishedAt": "2026-04-30",
+        "sha256": "c7b57c5665558676c023c7fb120d27e9f80927cbbea437fe3bd2c9eda79d09dc",
+        "source": "https://static.cninfo.com.cn/finalpage/2026-04-30/1225268476.PDF"
+      },
+      {
+        "id": "revised",
+        "entity": "黑龙江国中水务股份有限公司",
+        "version": "2025-annual-selected-revision-20260506",
+        "publishedAt": "2026-05-06",
+        "sha256": "59bbb82975d01d93f80a3906b86c9444535f6d3b7539e9282caac32267972968",
+        "source": "https://static.cninfo.com.cn/finalpage/2026-05-06/1225277429.PDF"
+      },
+      {
+        "id": "notice",
+        "entity": "黑龙江国中水务股份有限公司",
+        "version": "notice-2026-024",
+        "publishedAt": "2026-05-06",
+        "sha256": "b651016a8cf3004eb4aa02205a07be03b376ddf84d9abb96bbd0e965ef28b2ce",
+        "source": "https://static.cninfo.com.cn/finalpage/2026-05-06/1225277438.PDF"
+      }
+    ],
+    "relations": [
+      {
+        "from": "original",
+        "to": "revised",
+        "type": "correction",
+        "fields": [
+          "board-internal-control-description"
+        ],
+        "evidence": {
+          "documentId": "notice",
+          "page": 1,
+          "quote": "20.89%的股权”的表述有误，应为“间 接持有北京汇源食品饮料有限公司（简称北京汇源）21.89%"
+        },
+        "evidenceStatus": "quote-found-on-page",
+        "documentBindingStatus": "local-document-sha-bound",
+        "priorityDecision": "not-automatically-selected"
+      }
+    ],
+    "scope": "explicit version relations; no automatic supersession or audit opinion"
+  },
+  "fieldPairs": [
+    {
+      "id": "board-internal-control-description",
+      "before": {
+        "documentId": "original",
+        "page": 47,
+        "value": "20.89%",
+        "quote": "86%的股权、进而间接持有北京汇源食品饮料有 限公司 20.89%"
+      },
+      "after": {
+        "documentId": "revised",
+        "page": 47,
+        "value": "21.89%",
+        "quote": "86%的股权、进而间接持有北京汇源食品饮料有 限公司 21.89%"
+      },
+      "evidenceStatus": {
+        "before": "quote-found-on-page",
+        "after": "quote-found-on-page"
+      },
+      "status": "changed"
+    },
+    {
+      "id": "investment-note-description",
+      "before": {
+        "documentId": "original",
+        "page": 137,
+        "value": "21.89%",
+        "quote": " 从而间接持有北京汇源食品饮料有限公司（简称北京汇源）21.89%"
+      },
+      "after": {
+        "documentId": "revised",
+        "page": 137,
+        "value": "21.89%",
+        "quote": " 从而间接持有北京汇源食品饮料有限公司（简称北京汇源）21.89%"
+      },
+      "evidenceStatus": {
+        "before": "quote-found-on-page",
+        "after": "quote-found-on-page"
+      },
+      "status": "unchanged"
+    }
+  ],
+  "latestVersionStatus": "not-certified",
+  "limitations": [
+    "仅输入选定出现位置；同名字段其他出现位置/全部金额未核",
+    "更正公告仅作为关联依据，原始/修订文件分别核验，不能拿公告代替双版",
+    "不自动选最新版，不恢复历史事前可得，不出审计意见；未核页保持声明状态"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "generatedOn": "2026-10-09",
+  "sampleType": "teaching-only",
+  "version": "0.2.0.dev1，未发布开发分支",
+  "commandFromRepositoryRoot": "python -m cnreconcile examples/demo.json --format html --out local-data/report.html",
+  "input": "examples/demo.json",
+  "inputSha256": "dd6e8cd3f61a80eb6bf9ea7ac74cc21c7a58b0b25a9f218b9e6ffade1aac8129",
+  "originalOutputSha256": "f0bbda2bfcb70eb6b57bbaad6007acde9d6cc0509aad157abcee59682225e9ae",
+  "previewSha256": "2bf6220542b850e40737afd9a2329faed8f6449c5bd321ba96c24ece8d0b2e37",
+  "transformation": "Only added a visible teaching/date/development-version banner; generated findings unchanged",
+  "screenshot": "not acquired; browser visual permission unavailable",
+  "checks": [
+    "demo exit code 0",
+    "generated findings and teaching label inspected as text",
+    "no private paths or PDF included"
+  ],
+  "visualAcceptance": "not performed"
+}

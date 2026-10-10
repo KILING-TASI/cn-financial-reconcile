@@ -1,0 +1,9 @@
+{
+  "expected": {
+    "coverage.declaredDividend.cashSurplusCoverage": "1.6",
+    "coverage.paidDividend.status": "missing",
+    "amounts.paidDividend": null
+  },
+  "reason": "预案仅作为选定拟分红金额观察：80/50=1.6。无派息证据不填支付零；本工具不支持阶段状态机、不认证批准。CAS32第8条第9项。",
+  "error": null
+}

@@ -1,0 +1,67 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>研究结果</title><style>body{max-width:1000px;margin:32px auto;padding:0 20px;font:17px/1.7 system-ui,sans-serif;color:#203047}pre{white-space:pre-wrap;overflow-wrap:anywhere}table{border-collapse:collapse;width:100%}td,th{border-bottom:1px solid #ddd;padding:10px;text-align:left}input,select{font:inherit;max-width:100%}</style><body><p>截止日 2026-09-30；方法 cn-financial-reconcile-0.2.0.dev1 / cnreconcile-pairs-v1 / amount-dimensions-2</p><pre># 财报字段核对
+
+本次有1项数值差异，0项口径不同、暂不能直接比较。数值吻合和原文核验是两件事，不能合并成一个“通过”。
+
+## 营业收入｜2026-06-30
+
+数值存在差异，需要回查原文和提取过程。
+
+换算基础金额后，差额为-0.5001，声明精度允许的舍入差为0.5。
+报表版本未声明，数值相同不表示已经确认同版。
+原文状态：引句和页码仅为声明，未核本地原页。
+来源：教学资料，不是真实披露；原文：教学资料，不是真实披露。
+
+## 使用限制
+
+- 按声明的主体、期间、合并范围、币种和口径核对；不验证声明本身
+- 原页引句找到不证明数值被正确提取；数值勾稽与原页证据分列
+- 不出审计意见，不将差异直接判为造假
+- 不自动读取全部三表或判断会计法规适用性
+- 未声明财报版本不代表两份原文同版；重述差异不是自动更正判断
+</pre><section><label>筛选当前结果 <input id="result-filter" type="search" placeholder="输入名称、状态或期间"></label> <label>排序 <select id="result-sort"><option value="original">原顺序</option><option value="name">首列名称</option></select></label><p id="result-count" aria-live="polite"></p><p>仅筛选、排序本页已保存结果，不重新计算，不更换研究情景，也不改变总量与未知部分。</p><div style="overflow:auto"><table id="result-table"><thead><tr><th scope="col">字段</th><th scope="col">期间</th><th scope="col">计算状态</th><th scope="col">结论</th></tr></thead><tbody><tr data-order="0"><td>营业收入</td><td>2026-06-30</td><td>数值差异</td><td>数值存在差异，需要回查原文和提取过程</td></tr></tbody></table></div></section><script>
+(()=>{const q=document.getElementById('result-filter'),s=document.getElementById('result-sort'),t=document.querySelector('#result-table tbody'),rows=Array.from(t.rows);function update(){let count=0;rows.sort((a,b)=>s.value==='name'?a.cells[0].textContent.localeCompare(b.cells[0].textContent,'zh-CN'):Number(a.dataset.order)-Number(b.dataset.order));for(const row of rows){row.hidden=!row.textContent.toLowerCase().includes(q.value.trim().toLowerCase());if(!row.hidden)count++;t.appendChild(row);}document.getElementById('result-count').textContent='显示 '+count+' / '+rows.length+' 条';}q.addEventListener('input',update);s.addEventListener('change',update);update();})();
+</script><details><summary>保存的输入与方法摘要（分享前检查隐私）</summary><pre>{
+  &quot;input&quot;: {
+    &quot;asOf&quot;: &quot;2026-09-30&quot;,
+    &quot;pairs&quot;: [
+      {
+        &quot;reported&quot;: {
+          &quot;entity&quot;: &quot;教学公司&quot;,
+          &quot;metric&quot;: &quot;营业收入&quot;,
+          &quot;period&quot;: &quot;2026-06-30&quot;,
+          &quot;publishedAt&quot;: &quot;2026-08-20&quot;,
+          &quot;scope&quot;: &quot;合并&quot;,
+          &quot;currency&quot;: &quot;CNY&quot;,
+          &quot;basis&quot;: &quot;累计&quot;,
+          &quot;source&quot;: &quot;教学资料，不是真实披露&quot;,
+          &quot;value&quot;: &quot;1000&quot;,
+          &quot;unit&quot;: &quot;元&quot;,
+          &quot;roundingUnit&quot;: &quot;1&quot;
+        },
+        &quot;extracted&quot;: {
+          &quot;entity&quot;: &quot;教学公司&quot;,
+          &quot;metric&quot;: &quot;营业收入&quot;,
+          &quot;period&quot;: &quot;2026-06-30&quot;,
+          &quot;publishedAt&quot;: &quot;2026-08-20&quot;,
+          &quot;scope&quot;: &quot;合并&quot;,
+          &quot;currency&quot;: &quot;CNY&quot;,
+          &quot;basis&quot;: &quot;累计&quot;,
+          &quot;source&quot;: &quot;教学资料，不是真实披露&quot;,
+          &quot;value&quot;: &quot;1000.5001&quot;,
+          &quot;unit&quot;: &quot;元&quot;,
+          &quot;roundingUnit&quot;: &quot;0&quot;
+        },
+        &quot;evidence&quot;: {
+          &quot;page&quot;: 2,
+          &quot;quote&quot;: &quot;教学原文金额一亿元&quot;
+        }
+      }
+    ]
+  },
+  &quot;methodSha256&quot;: {
+    &quot;engine.py&quot;: &quot;1a82fd224c3f585a3d7945ce8c2df951624d20fd169f80c36d9b0e1d8d026725&quot;,
+    &quot;report.py&quot;: &quot;81498a2aa65f5e0d7384878c8741e3ae4d08237562be03cf48b7fcc0ceb330c6&quot;,
+    &quot;html_controls.py&quot;: &quot;76d24a00fdc945e0e9dee52383c4d0ae5f61952536c762928395daacbf1eecf8&quot;,
+    &quot;__main__.py&quot;: &quot;ca41a5fa71cb410a13fdfbb3241066929de2008fed2a85447d56e8d6b6672298&quot;
+  }
+}</pre></details></body></html>

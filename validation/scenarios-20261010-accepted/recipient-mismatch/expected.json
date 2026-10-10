@@ -1,0 +1,8 @@
+{
+  "expected": {
+    "coverage.declaredDividend.profitCoverage": null,
+    "coverage.declaredDividend.cashSurplusCoverage": "1.6"
+  },
+  "reason": "股息受益归属不同，利润覆盖未知；现金计算独立。",
+  "error": null
+}

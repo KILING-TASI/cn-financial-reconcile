@@ -1,0 +1,8 @@
+{
+  "expected": {
+    "coverage.declaredDividend.status": "period-not-comparable",
+    "coverage.declaredDividend.profitCoverage": null
+  },
+  "reason": "把宣告归属改为2024，2025利润及现金不能强行评价它。",
+  "error": null
+}

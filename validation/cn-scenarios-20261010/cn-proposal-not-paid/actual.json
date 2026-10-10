@@ -1,0 +1,8 @@
+{
+  "name": "cn-proposal-not-paid",
+  "passed": true,
+  "exitCode": 0,
+  "stderr": "",
+  "methodVersion": "dividend-observation-2",
+  "inputSha256": "4d500b43ac968ad32a8bad229599f5bbcd9d3ddede76f891e7ab0e39fbc5717b"
+}

@@ -1,0 +1,10 @@
+{
+  "expected": {
+    "results.0.difference": "0.00",
+    "results.0.status": "matched-within-rounding",
+    "results.0.pageEvidenceStatus": "declared-not-page-verified",
+    "results.1.status": "value-conflict"
+  },
+  "reason": "1亿元=10000万元；相同金额不证明原页已核。复用原教学正例。",
+  "error": null
+}

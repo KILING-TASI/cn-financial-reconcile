@@ -1,0 +1,117 @@
+{
+  "batch": "bounded-teaching-scenarios-20261010",
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "baseCommit": "bf164b2955826afe8c204d7a53df493328ad6f47",
+  "cases": [
+    {
+      "name": "amount-demo",
+      "passed": true,
+      "exitCode": 0,
+      "stderr": "",
+      "methodVersion": "amount-dimensions-2",
+      "inputSha256": "dd6e8cd3f61a80eb6bf9ea7ac74cc21c7a58b0b25a9f218b9e6ffade1aac8129"
+    },
+    {
+      "name": "rounding-boundary",
+      "passed": true,
+      "exitCode": 0,
+      "stderr": "",
+      "methodVersion": "amount-dimensions-2",
+      "inputSha256": "30b7b90b90f5a964aae66fc8fdffa919d999984fc2ea0212a983ab49b335ea8f"
+    },
+    {
+      "name": "rounding-outside",
+      "passed": true,
+      "exitCode": 0,
+      "stderr": "",
+      "methodVersion": "amount-dimensions-2",
+      "inputSha256": "ccce11e1e20352f253193cb758d2cd79961fb68290e7f402633944f697e03602"
+    },
+    {
+      "name": "same-money-different-version",
+      "passed": true,
+      "exitCode": 0,
+      "stderr": "",
+      "methodVersion": "amount-dimensions-2",
+      "inputSha256": "be3b1de445b9506d86cdc0786b616efee595bb3ff510f7b97871f43d617ac6bd"
+    },
+    {
+      "name": "missing-page",
+      "passed": true,
+      "exitCode": 0,
+      "stderr": "",
+      "methodVersion": "amount-dimensions-2",
+      "inputSha256": "1a2ffd9486332a38ac18bb4e742e747ecf87dd34548e337560f38a560966e339"
+    },
+    {
+      "name": "future-disclosure",
+      "passed": true,
+      "exitCode": 2,
+      "stderr": "未能完成：事实披露晚于截止日或早于报告期；未覆盖旧输出。\n",
+      "methodVersion": "rejected-before-result",
+      "inputSha256": "a23e7abc986d8ae1b75f9397386e0dc62409c70221e836f6b3e0bc89d2166aaf"
+    },
+    {
+      "name": "dividend-demo",
+      "passed": true,
+      "exitCode": 0,
+      "stderr": "",
+      "methodVersion": "dividend-observation-2",
+      "inputSha256": "220d0df3d067270511d89994e0d41d8ece2c5ebd82fdf15be936bc418ca028c9"
+    },
+    {
+      "name": "declaration-other-year",
+      "passed": true,
+      "exitCode": 0,
+      "stderr": "",
+      "methodVersion": "dividend-observation-2",
+      "inputSha256": "20a0cc4c32caa64f36da08a6959e3c7d39aa9f8855a24974984ed6203dfd8a92"
+    },
+    {
+      "name": "missing-capex",
+      "passed": true,
+      "exitCode": 0,
+      "stderr": "",
+      "methodVersion": "dividend-observation-2",
+      "inputSha256": "e1f9bafdbd8cd9a1e877c3f7ad2c0438de5265c4be9b40cf592f8fbc5995e2a7"
+    },
+    {
+      "name": "profit-ownership-mismatch",
+      "passed": true,
+      "exitCode": 0,
+      "stderr": "",
+      "methodVersion": "dividend-observation-2",
+      "inputSha256": "675fa879a8dde875f76ebe19a9c2af30f3bb0c4a0c4dab15df04b22cef005f41"
+    },
+    {
+      "name": "recipient-mismatch",
+      "passed": true,
+      "exitCode": 0,
+      "stderr": "",
+      "methodVersion": "dividend-observation-2",
+      "inputSha256": "f4b947c87901baac8d2cf97836868e5084de3c488f6bfb079b781406d7ae297f"
+    },
+    {
+      "name": "dividend-version-conflict",
+      "passed": true,
+      "exitCode": 2,
+      "stderr": "未能完成：经营指标期间或更正版本不同；未覆盖旧输出。\n",
+      "methodVersion": "rejected-before-result",
+      "inputSha256": "2fc2a585c65d543c8796d8b26553224855b24c3a68d6a852fd4912499c3040a1"
+    }
+  ],
+  "limitations": [
+    "教学情景，不扩大真实公司样本；没有PDF认证",
+    "HTML仅实际生成，未做浏览器视觉验收",
+    "失败场景没有结果文件；本入口拒绝已有输出目录"
+  ],
+  "sourceSha256": {
+    "validation\\run_scenarios.py": "82470f67dfafc9b8a7a80bf435e59fce97e12797ab06a5d01966df2160d926ca",
+    "cnreconcile\\dividend_observation.py": "6af5918afb55a402452c30bba529fc32e487a1712461902b47286916b77e4693",
+    "tests\\test_cli_scenarios.py": "367352f47e5adffde2a75abdf367af564b5a6b4a12a8612057e4e07833209ead"
+  },
+  "regression": {
+    "tests": 42,
+    "status": "passed"
+  }
+}
