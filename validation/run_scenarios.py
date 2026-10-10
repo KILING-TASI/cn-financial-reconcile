@@ -39,6 +39,14 @@ def lookup(value,path):
     for part in path.split("."):value=value[int(part)] if isinstance(value,list) else value[part]
     return value
 
+def source_commit():
+    if not (ROOT/".git").exists():
+        return "not-available-in-source-archive"
+    try:
+        return subprocess.check_output(["git","rev-parse","HEAD"],cwd=ROOT,text=True,stderr=subprocess.DEVNULL).strip()
+    except (OSError,subprocess.CalledProcessError):
+        return "git-metadata-unavailable"
+
 def run(out, cases=None):
     out.mkdir(parents=True,exist_ok=False)
     rows=[]
@@ -63,7 +71,7 @@ def run(out, cases=None):
                 assert rendered.returncode==0,rendered.stderr
         row=dict(name=case["name"],passed=True,exitCode=proc.returncode,stderr=proc.stderr,methodVersion=result.get("rulesVersion",result.get("methodVersion")) if result else "rejected-before-result",inputSha256=hashlib.sha256(source.read_bytes()).hexdigest())
         (folder/"actual.json").write_text(json.dumps(row,ensure_ascii=False,indent=2),encoding="utf-8");rows.append(row)
-    receipt=dict(batch="bounded-teaching-scenarios-20261010",python=sys.version,baseCommit=subprocess.check_output(["git","rev-parse","HEAD"],cwd=ROOT,text=True).strip(),cases=rows,limitations=["教学情景，不扩大真实公司样本；没有PDF认证", "HTML仅实际生成，未做浏览器视觉验收", "失败场景没有结果文件；本入口拒绝已有输出目录"])
+    receipt=dict(batch="bounded-teaching-scenarios-20261010",python=sys.version,baseCommit=source_commit(),cases=rows,limitations=["教学情景，不扩大真实公司样本；没有PDF认证", "HTML仅实际生成，未做浏览器视觉验收", "失败场景没有结果文件；本入口拒绝已有输出目录"])
     (out/"receipt.json").write_text(json.dumps(receipt,ensure_ascii=False,indent=2),encoding="utf-8")
     return receipt
 

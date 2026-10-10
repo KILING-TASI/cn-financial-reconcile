@@ -40,7 +40,7 @@ def extract_amount(spec):
         fact=dict(context,value=str(value));validate_fact(fact,cutoff)
         locator={key:selector[key] for key in ('physicalPage','tableIndex','rowIndex','columnIndex','headerRowIndex','rowLabel','columnLabel')}
         locator.update(rawCell=raw,rawRow=row,rawHeader=header,bbox=list(table.bbox),coordinateSystem='PDF points, top-left origin',sourceSha256=hashlib.sha256(path.read_bytes()).hexdigest())
-    return {'toolVersion':'cnreconcile-table-0.1.dev1','inputSchema':'explicit-table-cell-v1','rulesVersion':'row-column-unit-1','fact':fact,'tableEvidence':locator,'status':'explicit-cell-extracted','limitations':['主体/期间/合并范围/币种/累计口径仍依赖输入声明，未自动认证','表格坐标与单元格提取不等于审计结论，不自动处理任意PDF或扫描件']}
+    return {'toolVersion':'cnreconcile-table-0.2.0','inputSchema':'explicit-table-cell-v1','rulesVersion':'row-column-unit-1','fact':fact,'tableEvidence':locator,'status':'explicit-cell-extracted','limitations':['主体/期间/合并范围/币种/累计口径仍依赖输入声明，未自动认证','表格坐标与单元格提取不等于审计结论，不自动处理任意PDF或扫描件']}
 
 def validate_versions(documents,relations,as_of):
     if datetime.date.fromisoformat(as_of).isoformat()!=as_of:raise ValueError('版本核对截止日无效')
@@ -79,4 +79,4 @@ def validate_versions(documents,relations,as_of):
         if key in path:raise ValueError('版本关系存在循环，不能解释为修订链')
         for next_key in graph.get(key,[]):walk(next_key,path+[key])
     for key in docs:walk(key,[])
-    return {'toolVersion':'cnreconcile-table-0.2.dev1','inputSchema':'explicit-version-relations-v1','rulesVersion':'no-automatic-supersession-2','documents':documents,'relations':edges,'scope':'explicit version relations; no automatic supersession or audit opinion'}
+    return {'toolVersion':'cnreconcile-table-0.2.0','inputSchema':'explicit-version-relations-v1','rulesVersion':'no-automatic-supersession-2','documents':documents,'relations':edges,'scope':'explicit version relations; no automatic supersession or audit opinion'}
