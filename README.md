@@ -6,9 +6,9 @@
 
 ## 安装和首次试用
 
-本轮对应[发布页](https://github.com/KILING-TASI/cn-financial-reconcile/releases/tag/v0.2.4)；下载时以实际上传的完整源码、wheel、sdist 与校验清单为准。源码按下面步骤安装；下载 wheel 后，将安装命令末尾的 `.` 换成该 wheel 文件路径。pip 安装不会自动注册 AI 工具中的 Skill。
+本轮对应[发布页](https://github.com/KILING-TASI/cn-financial-reconcile/releases/tag/v0.2.5)；下载时以实际上传的完整源码、wheel、sdist 与校验清单为准。源码按下面步骤安装；下载 wheel 后，将安装命令末尾的 `.` 换成该 wheel 文件路径。pip 安装不会自动注册 AI 工具中的 Skill。
 
-本轮源码版本为 `0.2.4`。统一安装入口需要 Python 3.10 或以上。在完整源码目录新建自己的 Python 环境，下面的 Windows 命令不需要激活脚本：
+本轮源码版本为 `0.2.5`。统一安装入口需要 Python 3.10 或以上。在完整源码目录新建自己的 Python 环境，下面的 Windows 命令不需要激活脚本：
 
 ```powershell
 python -m venv .venv
@@ -105,3 +105,5 @@ python -m pip install ".[pdf]"
 本轮基金/财报新报告采用结论、关键缺口、完整证据三层阅读；保存页面已做[桌面与窄屏浏览器验收](validation/browser-20261010/README.md)。旧快照按原记录保留，不因此自动标为已验。
 
 0.2.4修正安装后的案例工具方法路径定位；原计算与0.2.3公开案例快照保留。工作台beta.10兼容矩阵记录的是固定0.2.3接口组合；本补丁不改变schema1接口，但不把新版本自动标成原组合已验。
+
+0.2.5固定公开案例在Git归档和检出中的LF换行，文件摘要与下载内容一致。0.2.3/0.2.4的内部案例清单可能受旧Windows归档换行转换影响；金额及原PDF核验未受影响，校验公开案例请使用0.2.5。旧标签和附件保留。
