@@ -1,8 +1,24 @@
 # 中国财报金额核对
 
+
+
 把渠道数据和原文提取的金额放在一起，先核对报表口径，再看数字是否一致，并列出尚未核实的原页证据。
 
 [![原创代码 MIT](https://img.shields.io/badge/原创代码-MIT-blue)](LICENSE)
+
+## 统一安装与启动
+
+本轮源码版本为 `0.2.1`。统一安装入口需要 Python 3.10 或以上。在完整源码目录新建自己的 Python 环境，下面的 Windows 命令不需要激活脚本：
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install .
+.\.venv\Scripts\cn-financial-reconcile.exe --help
+.\.venv\Scripts\cn-financial-reconcile.exe demo --out-dir reports/demo --auto-name
+```
+
+九个仓库都用仓库名启动；在已激活的环境中可以直接输入工具名。Linux/macOS 使用 `.venv/bin/python` 和 `.venv/bin/cn-financial-reconcile`。教学结果写入当前工作目录；`--auto-name` 自动另选新名字，旧结果保留。不加该参数时，教学入口拒绝已有目录。`cn-financial-reconcile run --help` 查看原生参数，原来的命令继续兼容。pip 安装提供 CLI；作为 Skill 使用仍须保留完整源码及许可资源，不能只复制 SKILL.md。安装可能需要联网获取普通构建依赖；教学离线。下面保留原生入口及此前发行记录，本轮安装和版本以本节为准。
+
 
 ## 最短试用
 
