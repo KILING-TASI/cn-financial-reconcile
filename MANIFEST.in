@@ -1,0 +1,9 @@
+include RELEASE_NOTES.md README.md SKILL.md LICENSE THIRD_PARTY_NOTICES.md DISCLAIMER.md METHODS.md ROADMAP.md DIVIDEND_OBSERVATION.md
+recursive-include examples *.json *.html *.md
+recursive-include validation *.py *.json *.html *.md
+recursive-include tests *.py
+recursive-include .github *.py *.yml
+global-exclude *.pdf *.PDF *.pyc
+prune build
+prune dist
+prune local-data

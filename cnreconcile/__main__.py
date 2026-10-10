@@ -1,6 +1,7 @@
 import argparse,json,html,sys
 from pathlib import Path
 from .engine import reconcile
+from .cli_feedback import utf8_console, failure, saved, pdf_unavailable
 
 def pairs(items):
  d={}
@@ -10,8 +11,7 @@ def pairs(items):
  return d
 
 def main():
- for stream in (sys.stdout,sys.stderr):
-  if hasattr(stream,"reconfigure"):stream.reconfigure(encoding="utf-8")
+ utf8_console()
  p=argparse.ArgumentParser(description='中国财报字段核对；读取声明资料，不自动联网')
  p.add_argument('input',type=Path);p.add_argument('--format',choices=['json','markdown','html'],default='json');p.add_argument('--out',type=Path)
  a=p.parse_args()
@@ -27,7 +27,9 @@ def main():
   if a.out:
    a.out.parent.mkdir(parents=True,exist_ok=True)
    with a.out.open('x',encoding='utf-8') as f:f.write(text)
+   saved('金额核对报告', a.out.parent, a.out, teaching=all('教学' in row[side].get('source','') for row in spec['pairs'] for side in ('reported','extracted')))
   else:print(text)
- except (ValueError,KeyError,TypeError,OSError,ArithmeticError) as e:p.exit(2,'未能完成：'+str(e)+'；未覆盖旧输出。\n')
+  if any(row['pageEvidenceStatus']=='pdf-component-missing' for row in r['results']):pdf_unavailable()
+ except (ValueError,KeyError,TypeError,OSError,ArithmeticError,ImportError) as e:p.exit(2,failure(e,a.out))
 
 if __name__=='__main__':main()

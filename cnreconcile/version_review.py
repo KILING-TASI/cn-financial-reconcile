@@ -5,6 +5,7 @@ import html
 import json
 from pathlib import Path
 from .engine import verify_pdf_quote
+from .cli_feedback import utf8_console, failure, saved
 from .table_extract import validate_versions
 
 
@@ -73,6 +74,9 @@ def publish(spec, out):
 
 
 if __name__=='__main__':
+    utf8_console()
     p=argparse.ArgumentParser();p.add_argument('input',type=Path);p.add_argument('--out-dir',required=True);args=p.parse_args()
-    try:publish(json.loads(args.input.read_text('utf-8-sig')),args.out_dir)
-    except (ValueError,OSError,KeyError,TypeError):p.exit(2,'未完成选定版本核验；不认证原文或完整性。\n')
+    try:
+        publish(json.loads(args.input.read_text('utf-8-sig')),args.out_dir)
+        saved('选定版本核验报告',args.out_dir,Path(args.out_dir)/'版本对照.html')
+    except (ValueError,OSError,KeyError,TypeError,ImportError) as error:p.exit(2,failure(error,args.out_dir))

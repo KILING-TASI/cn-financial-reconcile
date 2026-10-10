@@ -95,6 +95,8 @@ def verify(request):
 
 if __name__=='__main__':
     import argparse,json
+    from .cli_feedback import utf8_console, failure, saved
+    utf8_console()
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('input',type=Path);parser.add_argument('--out',required=True,type=Path);args=parser.parse_args()
     try:
@@ -111,4 +113,5 @@ if __name__=='__main__':
             path=Path(request['documentPath']);request['documentPath']=str(path if path.is_absolute() else args.input.resolve().parent/path)
         result=verify(request);args.out.parent.mkdir(parents=True,exist_ok=True)
         with args.out.open('x',encoding='utf-8') as stream:json.dump(result,stream,ensure_ascii=False,indent=2,allow_nan=False)
-    except (ValueError,KeyError,TypeError,OSError) as error:parser.exit(2,'未完成schema1原页核验：'+str(error)+'\n')
+        saved('schema1原页核验记录',args.out.parent,args.out)
+    except (ValueError,KeyError,TypeError,OSError,ImportError) as error:parser.exit(2,failure(error,args.out))

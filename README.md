@@ -37,6 +37,8 @@ python -m cnreconcile examples/demo.json --format html --out local-data/first-re
 
 不自动采集全部财报，不解析任意PDF或提供OCR；不自动选最新版、判断非经常损益分类、认证分红批准阶段，也不把含利息的混合现金支出整项当股息。每股收益、比率、汇率换算和预测不在基础金额核对范围内。结果供研究复查，不是审计意见。
 
+保存报告成功后会在stderr提示结果位置和打开文件；默认JSON的stdout保持可解析。已有输出请换新名字，缺PDF组件按可选依赖安装，非法输入核对字段、单位、日期和版本；不提供覆盖旧结果的选项。
+
 金额方法与反例见[方法说明](METHODS.md)，原表定位及输入契约见[接口说明](ROADMAP.md)，分红的条件、选定样本与缺口见[分红观察说明](DIVIDEND_OBSERVATION.md)。
 
 ## 独立使用与项目关系
@@ -59,11 +61,11 @@ python -m pip install ".[pdf]"
 
 该extra使用`pypdf>=4,<7`和`pdfplumber>=0.11,<0.12`。缺组件、无法提取文字或引句未找到，都不能算原页通过。PDF只在本地读取，不上传；工具不自动安装组件或下载原文。
 
-wheel包含运行代码，不包含源码仓的`examples/`和`validation/`。只安装wheel时，请自行提供符合契约的输入，不要假定当前目录已有教学文件。
+完整源码ZIP和sdist包含Skill说明、教学示例与验证资源；wheel包含运行代码，不包含源码仓的`examples/`和`validation/`。只安装wheel时，请自行提供符合契约的输入，不要假定当前目录已有教学文件。
 
 ## 源码与下载版本
 
-当前`main`已包含金额核对、选定原文与版本对照、分红观察及情景测试，源码版本为`0.2.0.dev1`。这些新增能力已集成到源码，尚未发布新的下载包。
+当前`main`已包含金额核对、选定原文与版本对照、分红观察及情景测试，此前集成源码版本为`0.2.0.dev1`。本PR准备`v0.2.0`候选包，尚未发布；现有Release仍为下述旧版。发布后下载与安装步骤见[发布说明](RELEASE_NOTES.md)。
 
 [旧版Release v0.1.0](https://github.com/KILING-TASI/cn-financial-reconcile/releases/tag/v0.1.0)是此前的研究预览版，不包含本次新增接口；本轮没有重新验证旧包，也不会自动更新用户安装。
 
