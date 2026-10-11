@@ -46,7 +46,7 @@ def calculate(spec):
     return {'methodVersion': 'cash-demand-stress/1', 'sampleType': base['sampleType'], 'baselineResult': base, 'currency': base['currency'],
             'status': 'partial' if unknown else 'scenario-calculated', 'scenarios': rows,
             'conclusion': ('教学金额，非公司真实披露。' if base['sampleType'] == 'teaching-only' else '') + f'所列{len(rows)}个假设情景中，{shortfall}个出现现金缺口，{unknown}个保留未知；不计算发生概率或期望收益。',
-            'humanRows': [[row['id'], '未知，需补资料或可比期间' if row['status'] == 'unknown' else '出现缺口：' + row['marginAfterAdditionalDemand'] if row['status'] == 'shortfall' else '假设下余量：' + row['marginAfterAdditionalDemand']] for row in rows],
+            'humanRows': [[row['id'], '未知，需补资料或可比期间' if row['status'] == 'unknown' else ('出现缺口：' if row['status'] == 'shortfall' else '假设下余量：') + format(decimal(row['marginAfterAdditionalDemand']), ',.2f') + '基本货币单位（' + base['currency'] + '）'] for row in rows],
             'limitations': ['所有金额使用基本货币单位；0表示明确假设无新增需求，null表示未知',
                             '增量需求仅指基准资本开支之外的新增现金需求，不能重复扣已经进入经营现金流的营运资金',
                             '资金余量不是账户可用余额；期初现金、受限现金、到期债务、收购和融资均未自动取得',
@@ -70,7 +70,9 @@ def main():
         if out.exists() or out.is_symlink(): raise ValueError('输出须新目录，旧结果保留')
         out.parent.mkdir(parents=True, exist_ok=True); stage = Path(tempfile.mkdtemp(prefix='.cash-stress-', dir=out.parent))
         for name, value in [('input.json', spec), ('result.json', result)]: (stage/name).write_text(json.dumps(value, ensure_ascii=False, indent=2, allow_nan=False), 'utf-8')
-        (stage/'report.html').write_text('<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>现金需求压力测算</title><style>body{max-width:960px;margin:32px auto;padding:0 20px;font:17px/1.7 system-ui}pre{white-space:pre-wrap;overflow-wrap:anywhere}</style><h1>现金需求压力测算</h1><p>'+html.escape(result['conclusion'])+'</p><pre>'+html.escape(json.dumps(result, ensure_ascii=False, indent=2))+'</pre></html>', 'utf-8')
+        table='<table><tr><th>情景</th><th>分红与额外需求后的余量</th></tr>'+''.join('<tr><td>'+html.escape(a)+'</td><td>'+html.escape(b)+'</td></tr>' for a,b in result['humanRows'])+'</table>'
+        limits='<ul>'+''.join('<li>'+html.escape(s)+'</li>' for s in result['limitations'])+'</ul>'
+        (stage/'report.html').write_text('<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>现金需求压力测算</title><style>body{max-width:960px;margin:32px auto;padding:0 20px;font:17px/1.7 system-ui}pre{white-space:pre-wrap;overflow-wrap:anywhere}table{width:100%}td,th{padding:10px;border-bottom:1px solid #ddd;overflow-wrap:anywhere}</style><h1>现金需求压力测算</h1><p>'+html.escape(result['conclusion'])+'</p><p>计算已完成；基准证据状态见下方明细，不代表未来资金安全。</p>'+table+'<h2>适用范围与缺口</h2>'+limits+'<details><summary>完整基准、来源状态与情景结果</summary><pre>'+html.escape(json.dumps(result, ensure_ascii=False, indent=2))+'</pre></details></html>', 'utf-8')
         (stage/'receipt.json').write_text(json.dumps({'files': {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in stage.iterdir()}, 'sourceVerified': False}, indent=2), 'utf-8')
         os.rename(stage, out); print('报告已生成：'+str(out/'report.html')); return 0
     except (ValueError, TypeError, KeyError, OSError, ArithmeticError, ImportError) as error:
