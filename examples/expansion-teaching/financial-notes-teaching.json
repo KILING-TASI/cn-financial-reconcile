@@ -1,0 +1,109 @@
+{
+  "inputSchema": "financial-notes/1",
+  "facts": [
+    {
+      "entity": "原创教学企业",
+      "metric": "cash",
+      "period": "2026-06-30",
+      "scope": "合并",
+      "currency": "CNY",
+      "basis": "累计",
+      "statementVersion": "original-v1",
+      "publishedAt": "2026-08-31",
+      "unit": "亿元",
+      "source": "原创教学附注",
+      "value": "20",
+      "evidence": {
+        "page": 1,
+        "quote": "原创教学附注金额，未核真实PDF"
+      }
+    },
+    {
+      "entity": "原创教学企业",
+      "metric": "restrictedCash",
+      "period": "2026-06-30",
+      "scope": "合并",
+      "currency": "CNY",
+      "basis": "累计",
+      "statementVersion": "original-v1",
+      "publishedAt": "2026-08-31",
+      "unit": "亿元",
+      "source": "原创教学附注",
+      "value": "8",
+      "evidence": {
+        "page": 1,
+        "quote": "原创教学附注金额，未核真实PDF"
+      }
+    },
+    {
+      "entity": "原创教学企业",
+      "metric": "shortDebt",
+      "period": "2026-06-30",
+      "scope": "合并",
+      "currency": "CNY",
+      "basis": "累计",
+      "statementVersion": "original-v1",
+      "publishedAt": "2026-08-31",
+      "unit": "亿元",
+      "source": "原创教学附注",
+      "value": "30",
+      "evidence": {
+        "page": 1,
+        "quote": "原创教学附注金额，未核真实PDF"
+      }
+    },
+    {
+      "entity": "原创教学企业",
+      "metric": "ebit",
+      "period": "2026-06-30",
+      "scope": "合并",
+      "currency": "CNY",
+      "basis": "累计",
+      "statementVersion": "original-v1",
+      "publishedAt": "2026-08-31",
+      "unit": "亿元",
+      "source": "原创教学附注",
+      "value": "3",
+      "evidence": {
+        "page": 1,
+        "quote": "原创教学附注金额，未核真实PDF"
+      }
+    },
+    {
+      "entity": "原创教学企业",
+      "metric": "interestExpense",
+      "period": "2026-06-30",
+      "scope": "合并",
+      "currency": "CNY",
+      "basis": "累计",
+      "statementVersion": "original-v1",
+      "publishedAt": "2026-08-31",
+      "unit": "亿元",
+      "source": "原创教学附注",
+      "value": "2",
+      "evidence": {
+        "page": 1,
+        "quote": "原创教学附注金额，未核真实PDF"
+      }
+    },
+    {
+      "entity": "原创教学企业",
+      "metric": "capitalizedInterest",
+      "period": "2026-06-30",
+      "scope": "合并",
+      "currency": "CNY",
+      "basis": "累计",
+      "statementVersion": "original-v1",
+      "publishedAt": "2026-08-31",
+      "unit": "亿元",
+      "source": "原创教学附注",
+      "value": null,
+      "evidence": {
+        "page": 1,
+        "quote": "原创教学附注金额，未核真实PDF"
+      }
+    }
+  ],
+  "asOf": "2026-10-01T18:00:00+08:00",
+  "asOfDate": "2026-10-01"
+}

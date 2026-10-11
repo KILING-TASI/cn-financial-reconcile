@@ -38,9 +38,9 @@
 
 ## 安装和首次试用
 
-安装包见[发布页](https://github.com/KILING-TASI/cn-financial-reconcile/releases/tag/v0.2.9)，提供完整源码、wheel、sdist 和校验清单。源码按下面步骤安装；下载 wheel 后，将安装命令末尾的 `.` 换成该 wheel 文件路径。pip 安装不会自动注册 AI 工具中的 Skill。
+安装包见[发布页](https://github.com/KILING-TASI/cn-financial-reconcile/releases/tag/v0.2.10)，提供完整源码、wheel、sdist 和校验清单。源码按下面步骤安装；下载 wheel 后，将安装命令末尾的 `.` 换成该 wheel 文件路径。pip 安装不会自动注册 AI 工具中的 Skill。
 
-安装包版本为 `0.2.9`。统一安装入口需要 Python 3.10 或以上。在完整源码目录新建自己的 Python 环境，下面的 Windows 命令不需要激活脚本：
+安装包版本为 `0.2.10`。统一安装入口需要 Python 3.10 或以上。在完整源码目录新建自己的 Python 环境，下面的 Windows 命令不需要激活脚本：
 
 ```powershell
 python -m venv .venv
@@ -139,3 +139,6 @@ HTML报告增加“指标怎么读、金额怎么核”，先看结论和缺口�
 [贡献说明](CONTRIBUTING.md) · [安全反馈](SECURITY.md) · [更新、缓存与卸载](LIFECYCLE.md)。
 
 [English introduction](README.en.md) · [版本变更](CHANGELOG.md)。
+
+
+新增[问题导向的证据复查](QUESTION_REVIEW.md)：cn-financial-reconcile notes review；示例、输入口径及限制见该页。

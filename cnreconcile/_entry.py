@@ -86,9 +86,19 @@ def main(argv=None):
         if hasattr(stream, 'reconfigure'):
             stream.reconfigure(encoding='utf-8')
     args = list(sys.argv[1:] if argv is None else argv)
+    if args and args[0] == 'notes':
+        from .notes_review import review
+        from .review_io import cli
+        old_argv = sys.argv[:]
+        try:
+            sys.argv = [REPO + ' notes', *args[1:]]
+            return cli({'review': review}, '现金与付息附注核对')
+        finally:
+            sys.argv[:] = old_argv
     if args and args[0] == "doctor":return doctor(args[1:])
     if not args or args in [['--help'], ['-h']]:
         print(REPO + '：独立研究工具。')
+        print('附注专题：' + REPO + ' notes review --input 底稿.json --out-dir 新目录')
         print('教学试用：' + REPO + ' demo --out-dir reports/demo --auto-name')
         print('原生入口：' + REPO + ' run --help（原有参数与计算口径保留）')
         if MODE == 'script':
