@@ -33,3 +33,7 @@
 当前`main`已包含金额核对、选定原文与版本对照、分红观察及情景测试，此前v0.2.0发行记录保留如下，当前版本以上方安装节为准；[v0.2.0已于2026-10-10发布](https://github.com/KILING-TASI/cn-financial-reconcile/releases/tag/v0.2.0)。下载[完整源码ZIP](https://github.com/KILING-TASI/cn-financial-reconcile/releases/download/v0.2.0/cn-financial-reconcile-0.2.0-source.zip)、[wheel](https://github.com/KILING-TASI/cn-financial-reconcile/releases/download/v0.2.0/cn_financial_reconcile-0.2.0-py3-none-any.whl)或[sdist](https://github.com/KILING-TASI/cn-financial-reconcile/releases/download/v0.2.0/cn_financial_reconcile-0.2.0.tar.gz)，并用[SHA256SUMS.txt](https://github.com/KILING-TASI/cn-financial-reconcile/releases/download/v0.2.0/SHA256SUMS.txt)核对摘要。安装步骤见[发布说明](RELEASE_NOTES.md)。
 
 [旧版Release v0.1.0](https://github.com/KILING-TASI/cn-financial-reconcile/releases/tag/v0.1.0)是此前的研究预览版，不包含本次新增接口；没有重新验证旧包，也不会自动更新用户安装。
+
+## 0.2.11.dev0（本地待发布）
+
+- 新增现金需求压力测算，年度不可比或需求未知时保持未知；无概率和期望收益。

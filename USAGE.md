@@ -81,3 +81,13 @@ python -m pip install ".[pdf]"
 
 
 HTML报告增加“指标怎么读、金额怎么核”，先看结论和缺口，再展开口径。见 [REPORT_GUIDE.md](REPORT_GUIDE.md)。
+
+## 2026-10-11 本地待发布补强
+
+本仓独立运行，无需工作台，无需数值计算依赖：
+
+```text
+python -m cnreconcile.cash_stress --input examples/cash-stress-teaching.json --out-dir 新现金压力报告
+```
+
+这两个示例是原创教学资料，不是真实公告。新增现金需求使用基本货币单位；明确假设无需求填0，未取得资料填null。情景说明、原输入、计算结果和文件摘要另存，不覆盖历史。计算成功不等于消息为真或未来分红安全。
