@@ -2,7 +2,8 @@
 name: cn-financial-reconcile
 description: 核对中国公司财务渠道值与已提取原文金额，检查主体、期间、合并范围、币种、单位和舍入差异，按需验证本地PDF物理页引句。用户要求财报数据核对或原文差异复查时使用，不出审计意见。
 metadata:
-  version: "0.2.11.dev0"
+  version: 0.2.11
+license: MIT
 ---
 
 # 中国财报金额核对
@@ -27,6 +28,10 @@ metadata:
 
 新增[问题导向的证据复查](QUESTION_REVIEW.md)：cn-financial-reconcile notes review；示例、输入口径及限制见该页。
 
-## 本地待发布：现金压力与证据对照
+## 本轮更新：现金压力与证据对照
 
 用户追问分红现金遇到压力时，可独立运行 `python -m cnreconcile.cash_stress --input INPUT.json --out-dir NEW`。调用已有年度分红证据核对后，计算经营现金、资本开支变动和额外需求下的余量；新增需求须扣除已在基准中的部分，避免重复扣营运资金。未知需求不填零，年度不同比较保持未知，不推断发生概率或真实账户可用现金。见 [USAGE.md](USAGE.md)。
+
+## 安装与结果状态
+
+本仓可以单独安装；pip安装命令行包不等于在助手中注册Skill。按本仓README安装完整资源，再使用SKILL中的入口。结果生成、资料取得与原文核验分别解释；未知说明影响及补齐路径。原创代码MIT，第三方代码保留许可，公告、研报和数据不随代码许可转移权利。

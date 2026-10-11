@@ -34,6 +34,6 @@
 
 [旧版Release v0.1.0](https://github.com/KILING-TASI/cn-financial-reconcile/releases/tag/v0.1.0)是此前的研究预览版，不包含本次新增接口；没有重新验证旧包，也不会自动更新用户安装。
 
-## 0.2.11.dev0（本地待发布）
+## 0.2.11（本轮更新）
 
 - 新增现金需求压力测算，年度不可比或需求未知时保持未知；无概率和期望收益。
