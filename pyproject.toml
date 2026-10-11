@@ -19,7 +19,7 @@ license-files = ["LICENSE", "THIRD_PARTY_NOTICES.md"]
 cn-financial-reconcile = "cnreconcile._entry:main"
 
 [tool.setuptools.data-files]
-"share/cn-financial-reconcile" = ["QUESTION_REVIEW.md","SHARED_CODE.json", "RIGHTS_INDEX.json", "CONTRIBUTING.md", "SECURITY.md", "LIFECYCLE.md", "README.en.md", "CHANGELOG.md", "AUDIT_SCOPE.md", "SKILL.md", "README.md", "BEGINNER.md", "LICENSE", "THIRD_PARTY_NOTICES.md", "REPORT_GUIDE.md", ]
+"share/cn-financial-reconcile" = ["USAGE.md", "QUESTION_REVIEW.md","SHARED_CODE.json", "RIGHTS_INDEX.json", "CONTRIBUTING.md", "SECURITY.md", "LIFECYCLE.md", "README.en.md", "CHANGELOG.md", "AUDIT_SCOPE.md", "SKILL.md", "README.md", "BEGINNER.md", "LICENSE", "THIRD_PARTY_NOTICES.md", "REPORT_GUIDE.md", ]
 "share/cn-financial-reconcile/examples" = ["examples/demo.json", "examples/INPUT_CONTRACTS.md", "examples/midea-dividend-source-input.json"]
 
 "share/cn-financial-reconcile/tools" = ["tools/reproduce_midea_case.py"]
