@@ -4,7 +4,7 @@ Compare explicitly declared amounts, units, periods and reporting scopes; option
 
 [中文说明](README.md) · [Release v0.2.12](https://github.com/KILING-TASI/cn-financial-reconcile/releases/tag/v0.2.12) · [Skill instructions](SKILL.md) · [Input preparation](BEGINNER.md)
 
-Current release: **regular release**. Python **3.10+**. Base runtime dependencies: none. Optional extras: `pdf`. See [USAGE.md](USAGE.md) for scope.
+Current release: **v0.2.12 · regular release**. Python **3.10+**. Base runtime dependencies: none. Optional extras: `pdf`. See [USAGE.md](USAGE.md) for scope.
 
 ## First run
 
