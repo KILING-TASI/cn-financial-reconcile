@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "public-validation/1",
+  "repository": "cn-financial-reconcile",
+  "registeredOn": "2026-10-15",
+  "hashFormat": "UTF-8 with LF newlines; BOM ignored; original response hashes remain in original receipts",
+  "coverage": "limited-public-inputs",
+  "sourceAuthenticityCertified": false,
+  "evidence": [
+    {
+      "path": "examples/midea-dividend-source-input.json",
+      "kind": "public-facts",
+      "normalizedSha256": "726f25987ee6d58c58b97b348da426c428cf0bc0193e059a3d8b1431441ac8e9",
+      "sourceUrls": [
+        "https://disc.static.szse.cn/download/disc/disk03/finalpage/2026-03-31/70e81c5f-97d4-4c87-8e4b-fcc5a3bcd361.PDF"
+      ]
+    }
+  ],
+  "checkFiles": [
+    "test_public_case_bytes.py",
+    "test_dividend_observation.py"
+  ],
+  "gaps": [
+    "选定金额与原文定位不代表完整三表审计",
+    "完整重述链及通用总额组件勾稽未完成"
+  ],
+  "limits": "registry and selected counterexamples; no new original-document authentication or investment-effect certification"
+}

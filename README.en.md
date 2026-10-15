@@ -2,13 +2,13 @@
 
 Compare explicitly declared amounts, units, periods and reporting scopes; optionally locate selected amounts in local PDFs. Arithmetic agreement does not certify an audit or a complete restatement chain.
 
-[中文说明](README.md) · [Release v0.2.12](https://github.com/KILING-TASI/cn-financial-reconcile/releases/tag/v0.2.12) · [Skill instructions](SKILL.md) · [Input preparation](BEGINNER.md)
+[中文说明](README.md) · [Release v0.2.13](https://github.com/KILING-TASI/cn-financial-reconcile/releases/tag/v0.2.13) · [Skill instructions](SKILL.md) · [Input preparation](BEGINNER.md)
 
-Current release: **v0.2.12 · regular release**. Python **3.10+**. Base runtime dependencies: none. Optional extras: `pdf`. See [USAGE.md](USAGE.md) for scope.
+Current release: **v0.2.13 · regular release**. Python **3.10+**. Base runtime dependencies: none. Optional extras: `pdf`. See [USAGE.md](USAGE.md) for scope.
 
 ## First run
 
-Download the [complete source ZIP](https://github.com/KILING-TASI/cn-financial-reconcile/releases/download/v0.2.12/cn-financial-reconcile-v0.2.12-source.zip), extract it and enter the directory containing `try_demo.py`:
+Download the [complete source ZIP](https://github.com/KILING-TASI/cn-financial-reconcile/releases/download/v0.2.13/cn-financial-reconcile-v0.2.13-source.zip), extract it and enter the directory containing `try_demo.py`:
 
 ```console
 python try_demo.py --no-open --out-dir reports/first-demo
